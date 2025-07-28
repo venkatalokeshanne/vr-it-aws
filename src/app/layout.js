@@ -16,9 +16,9 @@ export const metadata = {
   title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data | Hyderabad",
   description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Industry Certifications | Ameerpet, Hyderabad | Join 500+ Success Stories!",
   keywords: "AWS training Hyderabad, AWS cloud training, DevOps training Hyderabad, AWS data engineering, AWS certification Hyderabad, cloud computing training, Ameerpet AWS institute, comprehensive AWS course, Hyderabad IT training, placement guaranteed AWS training",
-  authors: [{ name: "AWS Cloud Training Hyderabad" }],
-  creator: "AWS Cloud Training Hyderabad",
-  publisher: "AWS Cloud Training Hyderabad",
+  authors: [{ name: "AWS Devops Training Acadamy" }],
+  creator: "AWS Devops Training Acadamy",
+  publisher: "AWS Devops Training Acadamy",
   robots: "index, follow",
   googlebot: "index, follow",
   viewport: "width=device-width, initial-scale=1",
@@ -33,7 +33,7 @@ export const metadata = {
     type: "website",
     locale: "en_IN",
     url: "/",
-    siteName: "AWS Cloud Training Hyderabad",
+    siteName: "AWS Devops Training Acadamy",
     title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
     description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
     images: [
@@ -41,7 +41,7 @@ export const metadata = {
         url: "/logo.png",
         width: 400,
         height: 400,
-        alt: "🎯 AWS Cloud Training Hyderabad - Complete AWS Hub for Cloud, DevOps & Data"
+        alt: "🎯 AWS Devops Training Acadamy - Complete AWS Hub for Cloud, DevOps & Data"
       }
     ]
   },
@@ -67,7 +67,7 @@ export default function RootLayout({ children }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "EducationalOrganization",
-    "name": "AWS Cloud Training Hyderabad",
+    "name": "AWS Devops Training Acadamy",
     "description": "Comprehensive AWS training institute in Hyderabad offering complete cloud computing, DevOps engineering, and data engineering courses with 100% placement assistance.",
     "url": "https://awscloudtraininghyderabad.com",
     "logo": "https://awscloudtraininghyderabad.com/logo.png",
@@ -101,7 +101,7 @@ export default function RootLayout({ children }) {
           "description": "Comprehensive AWS cloud computing training with hands-on projects and certification preparation.",
           "provider": {
             "@type": "EducationalOrganization",
-            "name": "AWS Cloud Training Hyderabad"
+            "name": "AWS Devops Training Acadamy"
           }
         },
         {
@@ -110,7 +110,7 @@ export default function RootLayout({ children }) {
           "description": "Advanced DevOps training covering CI/CD, containerization, and infrastructure automation.",
           "provider": {
             "@type": "EducationalOrganization",
-            "name": "AWS Cloud Training Hyderabad"
+            "name": "AWS Devops Training Acadamy"
           }
         },
         {
@@ -119,7 +119,7 @@ export default function RootLayout({ children }) {
           "description": "Specialized data engineering course focusing on AWS data services and analytics solutions.",
           "provider": {
             "@type": "EducationalOrganization",
-            "name": "AWS Cloud Training Hyderabad"
+            "name": "AWS Devops Training Acadamy"
           }
         }
       ]
@@ -161,7 +161,7 @@ export default function RootLayout({ children }) {
         <meta property="og:image:type" content="image/png" />
         <meta property="og:url" content="/" />
         <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="AWS Cloud Training Hyderabad" />
+        <meta property="og:site_name" content="AWS Devops Training Acadamy" />
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />

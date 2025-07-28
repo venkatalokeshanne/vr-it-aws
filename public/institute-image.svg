@@ -38,12 +38,12 @@
   
   <!-- Sign -->
   <rect x="50" y="380" width="200" height="80" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
-  <text x="150" y="405" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="14" font-weight="bold">AWS Cloud Training</text>
+  <text x="150" y="405" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="14" font-weight="bold">AWS Devops Training Acadamy</text>
   <text x="150" y="425" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="12">Hyderabad</text>
   <text x="150" y="445" text-anchor="middle" fill="#059669" font-family="Arial" font-size="10">100% Placement</text>
   
   <!-- Title -->
-  <text x="400" y="50" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="32" font-weight="bold">AWS Cloud Training Institute</text>
+  <text x="400" y="50" text-anchor="middle" fill="#1e40af" font-family="Arial" font-size="32" font-weight="bold">AWS Devops Training Acadamy</text>
   <text x="400" y="80" text-anchor="middle" fill="#475569" font-family="Arial" font-size="18">Ameerpet, Hyderabad</text>
   
   <!-- Features -->

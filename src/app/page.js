@@ -63,20 +63,72 @@ export default function Home() {
         </p>
       </div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
+      
+      {/* Navigation Header with Logo */}
+      <nav className="absolute top-0 left-0 right-0 z-50 px-6 py-6 sm:px-8 lg:px-12">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex items-center justify-between">
+            {/* Logo Section */}
+            <div className="flex items-center space-x-4">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg"></div>
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-3">
+                  <img 
+                    src="/logo.png" 
+                    alt="AWS Devops Training Acadamy Hyderabad Logo" 
+                    className="h-10 w-auto sm:h-12"
+                  />
+                </div>
+              </div>
+              <div className="hidden sm:block">
+                <div className="text-xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  AWS Devops Training Acadamy
+                </div>
+                <div className="text-sm text-blue-300 font-medium">Hyderabad • Since 2020</div>
+              </div>
+            </div>
+            
+            {/* Contact & CTA */}
+            <div className="flex items-center space-x-4">
+              {/* Phone Number */}
+              <div className="hidden lg:flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
+                <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+                <a 
+                  href="tel:+919032734343" 
+                  className="text-white hover:text-green-300 transition-colors font-medium"
+                >
+                  +91-9032734343
+                </a>
+              </div>
+              
+              {/* CTA Button */}
+              <button
+                onClick={() => handleEnrollment()}
+                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg"
+              >
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
       {/* SEO-friendly structured content */}
       <header>
         <h1 className="sr-only">AWS DevOps Training Hyderabad - Best Institute in HITEC City</h1>
       </header>
 
       {/* Hero Section */}
-      <section className="relative px-6 py-20 sm:px-8 lg:px-12" itemScope itemType="https://schema.org/EducationalOrganization">
+      <section className="relative px-6 pt-32 pb-20 sm:px-8 lg:px-12" itemScope itemType="https://schema.org/EducationalOrganization">
         <div className="mx-auto max-w-7xl">
           <div className="text-center">
             <div className="mb-8 inline-flex items-center rounded-full bg-blue-500/10 px-6 py-2 text-blue-400 ring-1 ring-blue-500/20">
               <span className="text-sm font-medium"> Premier AWS DevOps Training Institute - Ameerpet, Hyderabad</span>
             </div>
             
-            <h1 className="mx-auto max-w-5xl text-6xl font-bold tracking-tight text-white sm:text-8xl" itemProp="name">
+            <h1 className="mx-auto max-w-5xl text-4xl font-bold tracking-tight text-white sm:text-6xl" itemProp="name">
               Master{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
                 AWS Cloud
@@ -84,11 +136,100 @@ export default function Home() {
               in Hyderabad
             </h1>
             
-            <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-gray-300" itemProp="description">
-              Join Hyderabad&apos;s leading AWS Cloud training institute. Located in Ameerpet near Satyam Theatre, 
-              we specialize in comprehensive Cloud Computing, DevOps, and Data engineering programs with hands-on experience, 
-              industry partnerships, and guaranteed placement support for professionals across Telangana.
+            <p className="mx-auto mt-4 max-w-3xl text-lg leading-7 text-gray-300" itemProp="description">
+              Join Hyderabad&apos;s leading AWS Devops Training Acadamy in Ameerpet. Choose your high-impact career path below.
             </p>
+            
+            {/* TOP PRIORITY - 3 COURSES SHOWCASE - ABOVE THE FOLD */}
+            <div className="mt-8 mb-8">
+              <div className="text-center mb-6">
+                <h2 className="text-2xl font-bold text-white mb-3">🚀 Choose Your High-Impact Career Path</h2>
+              </div>
+              
+              <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
+                {/* AWS Cloud Fundamentals - TOP PRIORITY */}
+                <div className="group relative transform hover:scale-105 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/40 to-cyan-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-blue-400/60 rounded-2xl p-6 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-400/30">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-blue-500/50">
+                        <span className="text-2xl">☁️</span>
+                      </div>
+                      <div className="bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">MOST POPULAR</div>
+                      <h3 className="text-xl font-bold text-white mb-3">AWS Cloud Fundamentals</h3>
+                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Master cloud computing from basics to advanced architecture.</p>
+                      <div className="flex justify-center items-center space-x-2 mb-4">
+                        <span className="bg-blue-500/30 text-blue-200 px-2 py-1 rounded-full text-xs font-semibold">6 Months</span>
+                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹45K-₹80K</span>
+                      </div>
+                      <button
+                        onClick={() => handleLearnMore('AWS Cloud Fundamentals')}
+                        className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105"
+                      >
+                        🎯 Start Journey →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AWS DevOps Engineering - TOP PRIORITY */}
+                <div className="group relative transform hover:scale-105 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/40 to-pink-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-purple-400/60 rounded-2xl p-6 hover:border-purple-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-purple-400/30">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-purple-500/50">
+                        <span className="text-2xl">⚙️</span>
+                      </div>
+                      <div className="bg-purple-500/30 text-purple-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">HIGH DEMAND</div>
+                      <h3 className="text-xl font-bold text-white mb-3">AWS DevOps Engineering</h3>
+                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Master CI/CD, Docker, Kubernetes & Infrastructure automation.</p>
+                      <div className="flex justify-center items-center space-x-2 mb-4">
+                        <span className="bg-purple-500/30 text-purple-200 px-2 py-1 rounded-full text-xs font-semibold">8 Months</span>
+                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹60K-₹120K</span>
+                      </div>
+                      <button
+                        onClick={() => handleLearnMore('AWS DevOps Engineering')}
+                        className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-purple-500/50 transform hover:scale-105"
+                      >
+                        🔧 Master DevOps →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+
+                {/* AWS Data Engineering - TOP PRIORITY */}
+                <div className="group relative transform hover:scale-105 transition-all duration-300">
+                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/40 to-red-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
+                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-pink-400/60 rounded-2xl p-6 hover:border-pink-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-pink-400/30">
+                    <div className="text-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-pink-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-pink-500/50">
+                        <span className="text-2xl">📊</span>
+                      </div>
+                      <div className="bg-pink-500/30 text-pink-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">HIGHEST SALARY</div>
+                      <h3 className="text-xl font-bold text-white mb-3">AWS Data Engineering</h3>
+                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Build big data pipelines, analytics platforms & data lakes.</p>
+                      <div className="flex justify-center items-center space-x-2 mb-4">
+                        <span className="bg-pink-500/30 text-pink-200 px-2 py-1 rounded-full text-xs font-semibold">7 Months</span>
+                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹70K-₹150K</span>
+                      </div>
+                      <button
+                        onClick={() => handleLearnMore('AWS Data Engineering')}
+                        className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-400 hover:to-pink-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:scale-105"
+                      >
+                        📈 Engineer Data →
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              {/* Compact Benefits Banner */}
+              <div className="bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 border border-white/20 rounded-2xl p-4 backdrop-blur-lg">
+                <div className="text-center">
+                  <p className="text-white font-semibold text-sm">🔥 All courses: Live Projects • Industry Mentorship • 100% Placement • AWS Certifications</p>
+                </div>
+              </div>
+            </div>
             
             <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-center">
               <button 
@@ -238,6 +379,39 @@ export default function Home() {
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {/* AWS Cloud Course */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-blue-500/20 to-blue-600/20 p-8 backdrop-blur-sm border border-blue-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
+              {/* Banner Image */}
+              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-4 text-white">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                      <span className="text-3xl">☁️</span>
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold">AWS Cloud</h4>
+                      <p className="text-blue-100 text-sm">Foundation to Advanced</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-2 right-2">
+                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-xs text-white font-semibold">6 MONTHS</span>
+                  </div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
+                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
+              </div>
+
+              {/* Course Image */}
+              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+                <img 
+                  src="/cloud.webp" 
+                  alt="AWS Cloud Fundamentals Course" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white">AWS Cloud Fundamentals</h3>
                 <div className="bg-blue-500/20 px-3 py-1 rounded-full">
@@ -285,6 +459,40 @@ export default function Home() {
 
             {/* AWS DevOps Course */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-cyan-500/20 to-cyan-600/20 p-8 backdrop-blur-sm border border-cyan-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
+              {/* Banner Image */}
+              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-cyan-600 via-cyan-700 to-purple-600 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-4 text-white">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                      <span className="text-3xl">⚙️</span>
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold">DevOps Engineering</h4>
+                      <p className="text-cyan-100 text-sm">CI/CD & Automation</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-2 right-2">
+                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-xs text-white font-semibold">8 MONTHS</span>
+                  </div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
+                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
+                <div className="absolute right-4 bottom-2 w-8 h-8 bg-white/10 rounded-full"></div>
+              </div>
+
+              {/* Course Image */}
+              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+                <img 
+                  src="/devops.jpg" 
+                  alt="AWS DevOps Engineering Course" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white">AWS DevOps Engineering</h3>
                 <div className="bg-cyan-500/20 px-3 py-1 rounded-full">
@@ -332,6 +540,41 @@ export default function Home() {
 
             {/* AWS Data Course */}
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-purple-500/20 to-purple-600/20 p-8 backdrop-blur-sm border border-purple-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
+              {/* Banner Image */}
+              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-transparent"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="flex items-center space-x-4 text-white">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                      <span className="text-3xl">📊</span>
+                    </div>
+                    <div>
+                      <h4 className="text-2xl font-bold">Data Engineering</h4>
+                      <p className="text-purple-100 text-sm">Big Data & Analytics</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute top-2 right-2">
+                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                    <span className="text-xs text-white font-semibold">7 MONTHS</span>
+                  </div>
+                </div>
+                {/* Decorative Elements */}
+                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
+                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
+                <div className="absolute right-8 top-4 w-6 h-6 bg-white/15 rounded-full"></div>
+                <div className="absolute left-8 bottom-6 w-4 h-4 bg-white/10 rounded-full"></div>
+              </div>
+
+              {/* Course Image */}
+              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+                <img 
+                  src="/data.png" 
+                  alt="AWS Data Engineering Course" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-2xl font-bold text-white">AWS Data Engineering</h3>
                 <div className="bg-purple-500/20 px-3 py-1 rounded-full">
@@ -918,6 +1161,13 @@ Thank you!`;
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
         </svg>
       </button>
+
+      {/* Simple Footer */}
+      <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/10 py-6 text-center">
+        <p className="text-gray-400 text-sm">
+          © 2025 AWS DevOps Training Academy. All rights reserved.
+        </p>
+      </footer>
       </div>
     </>
   );
