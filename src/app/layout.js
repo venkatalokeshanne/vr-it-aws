@@ -38,10 +38,10 @@ export const metadata = {
     description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/social-image.svg",
         width: 1200,
         height: 630,
-        alt: "🚀 AWS Cloud Training Hyderabad - Complete AWS Hub for Cloud, DevOps & Data"
+        alt: "🎯 AWS Cloud Training Hyderabad - Complete AWS Hub for Cloud, DevOps & Data"
       }
     ]
   },
@@ -51,7 +51,7 @@ export const metadata = {
     creator: "@awscloudhyderabad",
     title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
     description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
-    images: ["/twitter-image.jpg"]
+    images: ["/social-image.svg"]
   },
   alternates: {
     canonical: "https://awscloudtraininghyderabad.com"
@@ -71,7 +71,7 @@ export default function RootLayout({ children }) {
     "description": "Comprehensive AWS training institute in Hyderabad offering complete cloud computing, DevOps engineering, and data engineering courses with 100% placement assistance.",
     "url": "https://awscloudtraininghyderabad.com",
     "logo": "https://awscloudtraininghyderabad.com/logo.png",
-    "image": "https://awscloudtraininghyderabad.com/institute-image.jpg",
+    "image": "https://awscloudtraininghyderabad.com/institute-image.svg",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "5th floor 506, Nilgiri block, ADITYA ENCLAVE, a/a, Satyam Theatre Rd, Kumar Basti, Ameerpet",
@@ -151,6 +151,13 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        
+        {/* Additional Open Graph tags for better WhatsApp sharing */}
+        <meta property="og:image" content="https://awscloudtraininghyderabad.com/social-image.svg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/svg+xml" />
+        
         <meta name="geo.region" content="IN-TG" />
         <meta name="geo.placename" content="Hyderabad" />
         <meta name="geo.position" content="17.4399;78.4483" />

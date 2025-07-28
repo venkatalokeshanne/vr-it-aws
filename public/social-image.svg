@@ -1,0 +1,57 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0f172a"/>
+  
+  <!-- Gradient overlay -->
+  <rect width="1200" height="630" fill="url(#gradient)" opacity="0.8"/>
+  
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e293b"/>
+      <stop offset="100%" style="stop-color:#334155"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Main container -->
+  <rect x="80" y="80" width="1040" height="470" rx="20" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.2)"/>
+  
+  <!-- AWS Logo -->
+  <rect x="120" y="120" width="70" height="70" rx="10" fill="#232f3e"/>
+  <text x="155" y="145" text-anchor="middle" fill="#ff9900" font-family="Arial Black" font-size="18" font-weight="900">AWS</text>
+  <text x="155" y="165" text-anchor="middle" fill="#ff9900" font-family="Arial" font-size="10">CLOUD</text>
+  
+  <!-- Main heading -->
+  <text x="220" y="160" fill="#ffffff" font-family="Arial Black" font-size="42" font-weight="900">Complete AWS Training Hub</text>
+  
+  <!-- Subheading -->
+  <text x="220" y="200" fill="#60a5fa" font-family="Arial" font-size="28" font-weight="bold">Cloud • DevOps • Data Engineering</text>
+  
+  <!-- Location -->
+  <text x="220" y="240" fill="#94a3b8" font-family="Arial" font-size="22">📍 Ameerpet, Hyderabad</text>
+  
+  <!-- Features -->
+  <text x="220" y="290" fill="#22c55e" font-family="Arial" font-size="19">✅ 100% Placement Guarantee</text>
+  <text x="220" y="320" fill="#22c55e" font-family="Arial" font-size="19">✅ Expert Industry Trainers</text>
+  <text x="220" y="350" fill="#22c55e" font-family="Arial" font-size="19">✅ Live Projects &amp; AWS Certifications</text>
+  
+  <!-- CTA Button -->
+  <rect x="220" y="380" width="320" height="50" rx="25" fill="#3b82f6"/>
+  <text x="380" y="410" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="18" font-weight="bold">Join 500+ Success Stories!</text>
+  
+  <!-- Right side icons -->
+  <circle cx="780" cy="180" r="35" fill="rgba(96,165,250,0.2)"/>
+  <text x="780" y="190" text-anchor="middle" fill="#60a5fa" font-size="28">☁️</text>
+  
+  <circle cx="880" cy="180" r="35" fill="rgba(168,85,247,0.2)"/>
+  <text x="880" y="190" text-anchor="middle" fill="#a855f7" font-size="28">⚙️</text>
+  
+  <circle cx="980" cy="180" r="35" fill="rgba(236,72,153,0.2)"/>
+  <text x="980" y="190" text-anchor="middle" fill="#ec4899" font-size="28">📊</text>
+  
+  <!-- Rating -->
+  <text x="780" y="280" fill="#fbbf24" font-family="Arial" font-size="20">⭐⭐⭐⭐⭐</text>
+  <text x="780" y="310" fill="#e2e8f0" font-family="Arial" font-size="16">4.9/5 • 150+ Reviews</text>
+  
+  <!-- Website -->
+  <text x="600" y="570" text-anchor="middle" fill="#94a3b8" font-family="Arial" font-size="18">awscloudtraininghyderabad.com</text>
+</svg>
