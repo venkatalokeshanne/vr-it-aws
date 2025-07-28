@@ -48,6 +48,20 @@ export default function Home() {
   return (
     <>
       <LocalBusinessSchema />
+      
+      {/* Hidden SEO Content for Search Engines */}
+      <div className="sr-only" aria-hidden="true">
+        <h1>Best AWS DevOps Training Institute in Hyderabad 2025</h1>
+        <p>
+          Looking for the best AWS DevOps training in Hyderabad? Our institute in Ameerpet near Satyam Theatre offers comprehensive AWS cloud computing courses and DevOps certification training with 100% placement assistance. We are the top-rated AWS training institute in Hyderabad with over 15,000+ successful placements.
+        </p>
+        <p>
+          Our AWS DevOps courses in Hyderabad cover everything from basic cloud fundamentals to advanced infrastructure automation. Located in the convenient area of Ameerpet, we provide hands-on training with real-world projects from leading tech companies in Hyderabad.
+        </p>
+        <p>
+          Why choose our AWS training in Hyderabad? Expert trainers with industry experience, state-of-the-art labs, flexible timings, excellent location with metro connectivity, and direct placement support with top MNCs across Hyderabad.
+        </p>
+      </div>
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
       {/* SEO-friendly structured content */}
       <header>
@@ -65,14 +79,14 @@ export default function Home() {
             <h1 className="mx-auto max-w-5xl text-6xl font-bold tracking-tight text-white sm:text-8xl" itemProp="name">
               Master{" "}
               <span className="bg-gradient-to-r from-blue-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                AWS DevOps
+                AWS Cloud
               </span>{" "}
               in Hyderabad
             </h1>
             
             <p className="mx-auto mt-8 max-w-3xl text-xl leading-8 text-gray-300" itemProp="description">
-              Join Hyderabad&apos;s leading AWS DevOps training institute. Located in Ameerpet near Satyam Theatre, 
-              we specialize in comprehensive DevOps, Cloud, and Data engineering programs with hands-on experience, 
+              Join Hyderabad&apos;s leading AWS Cloud training institute. Located in Ameerpet near Satyam Theatre, 
+              we specialize in comprehensive Cloud Computing, DevOps, and Data engineering programs with hands-on experience, 
               industry partnerships, and guaranteed placement support for professionals across Telangana.
             </p>
             
@@ -416,27 +430,6 @@ export default function Home() {
               >
                 Get Complete Guide
               </button>
-            </div>
-
-            {/* SEO Content Section */}
-            <div className="mt-20 max-w-4xl mx-auto text-left">
-              <h3 className="text-2xl font-bold text-white mb-6">Best AWS DevOps Training Institute in Hyderabad 2025</h3>
-              <div className="space-y-4 text-gray-300">
-                <p>
-                  Looking for the <strong>best AWS DevOps training in Hyderabad</strong>? Our institute in Ameerpet near Satyam Theatre offers comprehensive 
-                  <strong> AWS cloud computing courses</strong> and <strong>DevOps certification training</strong> with 100% placement assistance. 
-                  We are the <strong>top-rated AWS training institute in Hyderabad</strong> with over 15,000+ successful placements.
-                </p>
-                <p>
-                  Our <strong>AWS DevOps courses in Hyderabad</strong> cover everything from basic cloud fundamentals to advanced 
-                  infrastructure automation. Located in the convenient area of <strong>Ameerpet</strong>, we provide hands-on training 
-                  with real-world projects from leading tech companies in Hyderabad.
-                </p>
-                <p>
-                  <strong>Why choose our AWS training in Hyderabad?</strong> Expert trainers with industry experience, 
-                  state-of-the-art labs, flexible timings, excellent location with metro connectivity, and direct placement support with top MNCs across Hyderabad.
-                </p>
-              </div>
             </div>
           </div>
         </div>
@@ -905,10 +898,7 @@ Looking forward to hearing from you!`;
       {/* Floating WhatsApp Button */}
       <button
         onClick={() => {
-          const whatsappMessage = `👋 Hi! I&apos;m interested in AWS DevOps training at your Hyderabad institute.
-
-🏢 *Institute:* awsdevopstraininghyderabad.com
-📍 *Location:* HITEC City, Hyderabad
+          const whatsappMessage = `👋 Hi! I am interested in AWS DevOps training at your Hyderabad institute.
 
 Could you please share:
 - Available batch timings
