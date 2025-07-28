@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "AWS DevOps Training Hyderabad | #1 Institute in Ameerpet | 100% Placement",
-  description: "★★★★★ Best AWS DevOps Training in Hyderabad. Located in Ameerpet near Satyam Theatre with 100% placement guarantee. Expert trainers, live projects, certification prep. Call now!",
+  title: "🚀 AWS DevOps Training Hyderabad | #1 Institute | 100% Placement Guarantee",
+  description: "🎯 Transform Your Career with AWS DevOps! ✅ Expert Trainers ✅ Live Projects ✅ 100% Placement Support ✅ Industry Certifications | Located in Ameerpet, Hyderabad | Join 500+ Successful Students!",
   keywords: "AWS training Hyderabad, DevOps training Hyderabad, AWS certification Hyderabad, cloud computing training, Ameerpet AWS institute, AWS DevOps course, Hyderabad IT training, placement guaranteed AWS training",
   authors: [{ name: "AWS DevOps Training Hyderabad" }],
   creator: "AWS DevOps Training Hyderabad",
@@ -34,14 +34,14 @@ export const metadata = {
     locale: "en_IN",
     url: "https://awsdevopstraininghyderabad.com",
     siteName: "AWS DevOps Training Hyderabad",
-    title: "Best AWS DevOps Training in Hyderabad | Ameerpet | 100% Placement",
-    description: "Premier AWS DevOps training institute in Hyderabad's Ameerpet area. Expert trainers, hands-on projects, AWS certification prep with guaranteed placement assistance.",
+    title: "🚀 AWS DevOps Training Hyderabad | Transform Your Career Today!",
+    description: "🎯 Join India's Premier AWS DevOps Institute! ✅ 100% Placement Guarantee ✅ Expert Industry Trainers ✅ Live Projects ✅ AWS Certifications | Located in Ameerpet, Hyderabad",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "AWS DevOps Training Hyderabad - Best Institute in HITEC City"
+        alt: "🚀 AWS DevOps Training Hyderabad - Transform Your Career with #1 Institute"
       }
     ]
   },
@@ -49,8 +49,8 @@ export const metadata = {
     card: "summary_large_image",
     site: "@awsdevopshyderabad",
     creator: "@awsdevopshyderabad",
-    title: "Best AWS DevOps Training in Hyderabad | HITEC City",
-    description: "Premier AWS DevOps training institute in Hyderabad. 100% placement guarantee, expert trainers, live projects. Located in HITEC City.",
+    title: "🚀 AWS DevOps Training Hyderabad | Career Transformation Starts Here!",
+    description: "🎯 Join 500+ Success Stories! ✅ 100% Placement ✅ Industry Expert Trainers ✅ Live AWS Projects ✅ Certifications | Ameerpet, Hyderabad",
     images: ["/twitter-image.jpg"]
   },
   alternates: {
@@ -148,6 +148,9 @@ export default function RootLayout({ children }) {
           }}
         />
         <link rel="canonical" href="https://awsdevopstraininghyderabad.com" />
+        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="shortcut icon" href="/logo.png" type="image/png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
         <meta name="geo.region" content="IN-TG" />
         <meta name="geo.placename" content="Hyderabad" />
         <meta name="geo.position" content="17.4399;78.4483" />
