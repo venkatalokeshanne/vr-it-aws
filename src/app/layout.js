@@ -32,15 +32,15 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    url: "https://awscloudtraininghyderabad.com",
+    url: "/",
     siteName: "AWS Cloud Training Hyderabad",
     title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
     description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
     images: [
       {
-        url: "/social-image.svg",
-        width: 1200,
-        height: 630,
+        url: "/logo.png",
+        width: 400,
+        height: 400,
         alt: "🎯 AWS Cloud Training Hyderabad - Complete AWS Hub for Cloud, DevOps & Data"
       }
     ]
@@ -51,10 +51,10 @@ export const metadata = {
     creator: "@awscloudhyderabad",
     title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
     description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
-    images: ["/social-image.svg"]
+    images: ["/logo.png"]
   },
   alternates: {
-    canonical: "https://awscloudtraininghyderabad.com"
+    canonical: "/"
   },
   verification: {
     google: "your-google-verification-code", // Replace with actual code
@@ -147,16 +147,27 @@ export default function RootLayout({ children }) {
             __html: JSON.stringify(structuredData)
           }}
         />
-        <link rel="canonical" href="https://awscloudtraininghyderabad.com" />
+        <link rel="canonical" href="/" />
         <link rel="icon" href="/logo.png" type="image/png" />
         <link rel="shortcut icon" href="/logo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/logo.png" />
         
         {/* Additional Open Graph tags for better WhatsApp sharing */}
-        <meta property="og:image" content="https://awscloudtraininghyderabad.com/social-image.svg" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/svg+xml" />
+        <meta property="og:title" content="🎯 Complete AWS Training Hub | Cloud • DevOps • Data" />
+        <meta property="og:description" content="✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad" />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:image:width" content="400" />
+        <meta property="og:image:height" content="400" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:url" content="/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="AWS Cloud Training Hyderabad" />
+        
+        {/* Twitter Card tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="🎯 Complete AWS Training Hub | Cloud • DevOps • Data" />
+        <meta name="twitter:description" content="✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad" />
+        <meta name="twitter:image" content="/logo.png" />
         
         <meta name="geo.region" content="IN-TG" />
         <meta name="geo.placename" content="Hyderabad" />
