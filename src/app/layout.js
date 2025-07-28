@@ -87,7 +87,7 @@ export default function RootLayout({ children }) {
     },
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+91-8123456789",
+      "telephone": "+91-9032734343",
       "contactType": "Admissions",
       "availableLanguage": ["English", "Hindi", "Telugu"]
     },

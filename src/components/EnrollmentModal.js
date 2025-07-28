@@ -27,7 +27,7 @@ export default function EnrollmentModal({ isOpen, onClose, courseName = 'AWS Tra
 Please confirm my enrollment and share the next steps!`;
 
     // WhatsApp number (replace with your actual WhatsApp business number)
-    const whatsappNumber = '+918123456789'; // Replace with your actual number
+    const whatsappNumber = '+919032734343'; // Replace with your actual number
     
     // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;

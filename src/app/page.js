@@ -569,7 +569,6 @@ export default function Home() {
                 </div>
               </div>
             </div>
-322456 544680 882191
             {/* FAQ Item 6 */}
             <div className="group" itemScope itemType="https://schema.org/Question">
               <div className="bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 hover:border-orange-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-orange-500/10">
@@ -602,7 +601,7 @@ export default function Home() {
               <button 
                 onClick={() => {
                   const whatsappMessage = `Hi! I have some questions about AWS DevOps training in Hyderabad. Could you please help me?`;
-                  const whatsappNumber = '+918123456789';
+                  const whatsappNumber = '+919032734343';
                   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                   window.open(whatsappURL, '_blank');
                 }}
@@ -667,31 +666,14 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">Call Us Now</h4>
-                    <a href="tel:+918123456789" itemProp="telephone" className="text-2xl font-bold text-green-400 hover:text-green-300 transition-colors">
-                      +91-8123456789
+                    <a href="tel:+919032734343" itemProp="telephone" className="text-2xl font-bold text-green-400 hover:text-green-300 transition-colors">
+                      +91-9032734343
                     </a>
                     <p className="text-sm text-gray-400 mt-2">Available 9 AM - 9 PM, Monday to Saturday</p>
                   </div>
                 </div>
               </div>
 
-              {/* Email */}
-              <div className="group bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
-                <div className="flex items-start gap-6">
-                  <div className="flex-shrink-0 w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
-                    <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Email Us</h4>
-                    <a href="mailto:info@awsdevopstraininghyderabad.com" itemProp="email" className="text-lg text-purple-400 hover:text-purple-300 transition-colors">
-                      info@awsdevopstraininghyderabad.com
-                    </a>
-                    <p className="text-sm text-gray-400 mt-2">We respond within 2 hours during business hours</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* Quick Contact Form */}
@@ -718,7 +700,7 @@ export default function Home() {
 
 Looking forward to hearing from you!`;
 
-                const whatsappNumber = '+918123456789';
+                const whatsappNumber = '+919032734343';
                 const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                 window.open(whatsappURL, '_blank');
               }}>
@@ -935,7 +917,7 @@ Could you please share:
 - Placement assistance
 
 Thank you!`;
-          const whatsappNumber = '+918123456789'; // Replace with your actual number
+          const whatsappNumber = '+919032734343'; // Replace with your actual number
           const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
           window.open(whatsappURL, '_blank');
         }}

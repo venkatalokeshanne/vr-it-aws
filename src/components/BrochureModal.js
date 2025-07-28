@@ -28,7 +28,7 @@ Hi! I would like to receive the detailed course brochure with curriculum, fees, 
 Thank you!`;
 
     // WhatsApp number (replace with your actual WhatsApp business number)
-    const whatsappNumber = '+918123456789'; // Replace with your actual number
+    const whatsappNumber = '+919032734343'; // Replace with your actual number
     
     // Create WhatsApp URL
     const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;

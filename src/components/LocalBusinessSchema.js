@@ -7,7 +7,7 @@ export default function LocalBusinessSchema() {
     "alternateName": "Best AWS Training Institute Hyderabad",
     "description": "Premier AWS DevOps training institute in Hyderabad offering comprehensive cloud computing courses with 100% placement assistance. Located in HITEC City.",
     "url": "https://awsdevopstraininghyderabad.com",
-    "telephone": "+91-8123456789",
+    "telephone": "+91-9032734343",
     "email": "info@awsdevopstraininghyderabad.com",
     "address": {
       "@type": "PostalAddress",
