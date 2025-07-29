@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import emailjs from '@emailjs/browser';
 import EnrollmentModal from '../components/EnrollmentModal';
 import CoursesModal from '../components/CoursesModal';
 import BrochureModal from '../components/BrochureModal';
@@ -10,13 +11,19 @@ export default function Home() {
   const [enrollmentModal, setEnrollmentModal] = useState(false);
   const [coursesModal, setCoursesModal] = useState(false);
   const [brochureModal, setBrochureModal] = useState(false);
+  const [courseAccessModal, setCourseAccessModal] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
+  const [pendingCourseRoute, setPendingCourseRoute] = useState('');
   const router = useRouter();
 
   const handleEnrollment = (courseName = '') => {
-    setSelectedCourse(courseName);
+    // Set the course and show access form first
+    setSelectedCourse(courseName || 'General Enrollment');
     setCoursesModal(false);
-    setEnrollmentModal(true);
+    
+    // Set pending action as enrollment instead of course navigation
+    setPendingCourseRoute('enrollment');
+    setCourseAccessModal(true);
   };
 
   const handleViewCourses = () => {
@@ -28,21 +35,22 @@ export default function Home() {
   };
 
   const handleLearnMore = (courseName) => {
-    // Navigate to course-specific pages
+    // Set the course and route to navigate to after form submission
+    setSelectedCourse(courseName);
     switch (courseName) {
       case 'AWS Cloud Fundamentals':
-        router.push('/courses/aws-cloud-fundamentals');
+        setPendingCourseRoute('/courses/aws-cloud-fundamentals');
         break;
       case 'AWS DevOps Engineering':
-        router.push('/courses/aws-devops-engineering');
+        setPendingCourseRoute('/courses/aws-devops-engineering');
         break;
       case 'AWS Data Engineering':
-        router.push('/courses/aws-data-engineering');
+        setPendingCourseRoute('/courses/aws-data-engineering');
         break;
       default:
-        setSelectedCourse(courseName);
-        setEnrollmentModal(true);
+        setPendingCourseRoute('');
     }
+    setCourseAccessModal(true);
   };
 
   return (
@@ -72,19 +80,13 @@ export default function Home() {
             <div className="flex items-center space-x-4">
               <div className="relative">
                 <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-2xl blur-lg"></div>
-                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-3">
+                <div className="relative bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-1">
                   <img 
-                    src="/logo.png" 
+                    src="/home-logo.png" 
                     alt="AWS Devops Training Acadamy Hyderabad Logo" 
-                    className="h-10 w-auto sm:h-12"
+                    className="h-10 w-auto sm:h-12 rounded-xl"
                   />
                 </div>
-              </div>
-              <div className="hidden sm:block">
-                <div className="text-xl font-bold text-white bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-                  AWS Devops Training Acadamy
-                </div>
-                <div className="text-sm text-blue-300 font-medium">Hyderabad • Since 2020</div>
               </div>
             </div>
             
@@ -96,17 +98,17 @@ export default function Home() {
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
                 <a 
-                  href="tel:+919032734343" 
+                  href="tel:+919885543638" 
                   className="text-white hover:text-green-300 transition-colors font-medium"
                 >
-                  +91-9032734343
+                  +91-98855 43638
                 </a>
               </div>
               
               {/* CTA Button */}
               <button
                 onClick={() => handleEnrollment()}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg"
+                className="hidden sm:block bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 Enroll Now
               </button>
@@ -837,7 +839,7 @@ export default function Home() {
               <button 
                 onClick={() => {
                   const whatsappMessage = `Hi! I have some questions about AWS DevOps training in Hyderabad. Could you please help me?`;
-                  const whatsappNumber = '+919032734343';
+                  const whatsappNumber = '+919885543638';
                   const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                   window.open(whatsappURL, '_blank');
                 }}
@@ -881,13 +883,13 @@ export default function Home() {
                   <div itemProp="address" itemScope itemType="https://schema.org/PostalAddress">
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-blue-300 transition-colors">Visit Our Institute</h4>
                     <p className="text-gray-300 leading-relaxed">
-                      <span itemProp="streetAddress">5th floor 506, Nilgiri block, ADITYA ENCLAVE,<br/>
-                      a/a, Satyam Theatre Rd, Kumar Basti, Ameerpet</span>,<br/>
+                      <span itemProp="streetAddress">Aditya enclave, nilgiri block, near vamsi Installation,<br/>
+                      506A/1, basti road, beside metro line</span>,<br/>
                       <span itemProp="addressLocality">Hyderabad</span>, 
                       <span itemProp="addressRegion"> Telangana</span> 
-                      <span itemProp="postalCode">500073</span>, <span itemProp="addressCountry">India</span>
+                      <span itemProp="postalCode">500018</span>, <span itemProp="addressCountry">India</span>
                     </p>
-                    <p className="text-sm text-gray-400 mt-2">Near Satyam Theatre with excellent metro connectivity</p>
+                    <p className="text-sm text-gray-400 mt-2">Near Vamsi Installation with excellent metro connectivity</p>
                   </div>
                 </div>
               </div>
@@ -902,8 +904,8 @@ export default function Home() {
                   </div>
                   <div>
                     <h4 className="text-xl font-bold text-white mb-2 group-hover:text-green-300 transition-colors">Call Us Now</h4>
-                    <a href="tel:+919032734343" itemProp="telephone" className="text-2xl font-bold text-green-400 hover:text-green-300 transition-colors">
-                      +91-9032734343
+                    <a href="tel:+919885543638" itemProp="telephone" className="text-2xl font-bold text-green-400 hover:text-green-300 transition-colors">
+                      +91-98855 43638
                     </a>
                     <p className="text-sm text-gray-400 mt-2">Available 9 AM - 9 PM, Monday to Saturday</p>
                   </div>
@@ -936,7 +938,7 @@ export default function Home() {
 
 Looking forward to hearing from you!`;
 
-                const whatsappNumber = '+919032734343';
+                const whatsappNumber = '+919885543638';
                 const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
                 window.open(whatsappURL, '_blank');
               }}>
@@ -1057,9 +1059,10 @@ Looking forward to hearing from you!`;
                     <div>
                       <h5 className="font-bold text-gray-900 text-sm">AWS DevOps Training Hyderabad</h5>
                       <p className="text-xs text-gray-600 mt-1">
-                        5th floor 506, Nilgiri block<br/>
-                        ADITYA ENCLAVE, Ameerpet<br/>
-                        Hyderabad, Telangana 500073
+                        Aditya enclave, nilgiri block<br/>
+                        near vamsi Installation, 506A/1<br/>
+                        basti road, beside metro line<br/>
+                        Hyderabad, Telangana 500018
                       </p>
                       <div className="flex items-center gap-2 mt-2">
                         <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Open</span>
@@ -1106,7 +1109,7 @@ Looking forward to hearing from you!`;
               {/* Get Directions Button */}
               <div className="text-center mt-6">
                 <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=17.4399,78.4483&destination_place_id=ChIJ5th floor 506, Nilgiri block, ADITYA ENCLAVE, Ameerpet, Hyderabad"
+                  href="https://www.google.com/maps/dir/?api=1&destination=Aditya+enclave,nilgiri+block,near+vamsi+Installation,506A/1,basti+road,beside+metro+line,Hyderabad,Telangana+500018,India"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 px-6 py-3 rounded-xl text-white font-semibold transition-all duration-300 transform hover:scale-105"
@@ -1138,6 +1141,178 @@ Looking forward to hearing from you!`;
         onClose={() => setBrochureModal(false)}
       />
 
+      {/* Course Access Form Modal */}
+      {courseAccessModal && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-slate-800 rounded-2xl p-8 max-w-md w-full max-h-[90vh] overflow-y-auto border border-slate-600">
+            <div className="flex justify-between items-center mb-6">
+              <h3 className="text-2xl font-bold text-white">Access Course Details</h3>
+              <button
+                onClick={() => setCourseAccessModal(false)}
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            
+            <div className="mb-6">
+              <h4 className="text-lg font-semibold text-blue-400 mb-2">{selectedCourse}</h4>
+              <p className="text-gray-300 text-sm">Fill out this quick form to access detailed course information, curriculum, and exclusive content.</p>
+            </div>
+
+            <form onSubmit={async (e) => {
+              e.preventDefault();
+              const form = e.target;
+              const formData = new FormData(form);
+              const data = {
+                name: formData.get('name'),
+                email: formData.get('email'),
+                phone: formData.get('phone'),
+                course: selectedCourse,
+                message: formData.get('message')
+              };
+
+              try {
+                // Send email using EmailJS
+                const templateParams = {
+                  from_name: data.name,
+                  from_email: data.email,
+                  phone: data.phone,
+                  course: data.course,
+                  message: data.message || 'No message provided',
+                  to_email: 'mevlokia@gmail.com', // Replace with your email
+                  email_message: `Course Access Request for ${selectedCourse}
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Message: ${data.message || 'No message provided'}
+
+This user is requesting access to detailed information about the ${selectedCourse} course.`
+                };
+
+                // Initialize EmailJS with your public key
+                emailjs.init('rRzS4bf_NvOFsogXv'); // Replace with your EmailJS public key
+                
+                await emailjs.send(
+                  'service_vk9hhko', // Replace with your EmailJS service ID
+                  'template_62znhua', // Replace with your EmailJS template ID
+                  templateParams
+                );
+
+                alert('Thank you! We\'ve received your request and will send you the course details shortly.');
+                
+                // Close modal and handle next action
+                setCourseAccessModal(false);
+                if (pendingCourseRoute === 'enrollment') {
+                  // Open enrollment modal after form submission
+                  setEnrollmentModal(true);
+                } else if (pendingCourseRoute) {
+                  // Navigate to course details page
+                  router.push(pendingCourseRoute);
+                }
+              } catch (error) {
+                console.error('Error sending email:', error);
+                // Fallback to mailto
+                const emailBody = `
+Course Access Request:
+
+Name: ${data.name}
+Email: ${data.email}
+Phone: ${data.phone}
+Course: ${data.course}
+Message: ${data.message || 'No message provided'}
+
+This user is requesting access to ${selectedCourse} course details.
+                `;
+                
+                const mailtoLink = `mailto:mevlokia@gmail.com?subject=Course Access Request - ${selectedCourse}&body=${encodeURIComponent(emailBody)}`;
+                window.open(mailtoLink, '_blank');
+                
+                alert('Email client opened. Please send the email to complete your request.');
+                
+                // Close modal and handle next action
+                setCourseAccessModal(false);
+                if (pendingCourseRoute === 'enrollment') {
+                  // Open enrollment modal after form submission
+                  setEnrollmentModal(true);
+                } else if (pendingCourseRoute) {
+                  // Navigate to course details page
+                  router.push(pendingCourseRoute);
+                }
+              }
+            }}>
+              <div className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter your full name"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter your email"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Phone Number *</label>
+                  <input
+                    type="tel"
+                    name="phone"
+                    required
+                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Enter your phone number"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                  <textarea
+                    name="message"
+                    rows="3"
+                    className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    placeholder="Tell us about your goals, expectations, or any questions..."
+                  ></textarea>
+                </div>
+              </div>
+
+              <div className="flex gap-3 mt-6">
+                <button
+                  type="button"
+                  onClick={() => setCourseAccessModal(false)}
+                  className="flex-1 px-6 py-3 bg-slate-600 text-white rounded-lg hover:bg-slate-500 transition-colors"
+                >
+                  Cancel
+                </button>
+                <button
+                  type="submit"
+                  className="flex-1 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg hover:from-blue-500 hover:to-purple-500 transition-all duration-300 font-semibold"
+                >
+                  Access Course Details
+                </button>
+              </div>
+            </form>
+
+            <p className="text-xs text-gray-400 mt-4 text-center">
+              Your information is secure and will only be used to provide you with course details and updates.
+            </p>
+          </div>
+        </div>
+      )}
+
       {/* Floating WhatsApp Button */}
       <button
         onClick={() => {
@@ -1150,7 +1325,7 @@ Could you please share:
 - Placement assistance
 
 Thank you!`;
-          const whatsappNumber = '+919032734343'; // Replace with your actual number
+          const whatsappNumber = '+919885543638'; // Replace with your actual number
           const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
           window.open(whatsappURL, '_blank');
         }}
