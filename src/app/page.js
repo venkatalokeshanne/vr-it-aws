@@ -118,6 +118,19 @@ export default function Home() {
                 </a>
               </div>
               
+              {/* Email Address */}
+              <div className="hidden xl:flex items-center space-x-2 bg-white/5 backdrop-blur-sm border border-white/10 rounded-full px-4 py-2">
+                <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <a 
+                  href="mailto:info@awsdevopstraininginhyderabad.com" 
+                  className="text-white hover:text-purple-300 transition-colors font-medium text-sm"
+                >
+                  info@awsdevops...
+                </a>
+              </div>
+              
               {/* CTA Button */}
               <button
                 onClick={() => handleEnrollment()}
@@ -931,6 +944,24 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* Email */}
+              <div className="group bg-gradient-to-br from-slate-800/80 to-slate-700/80 backdrop-blur-sm border border-slate-600/50 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/10">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center group-hover:bg-purple-500/30 transition-colors">
+                    <svg className="w-8 h-8 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white mb-2 group-hover:text-purple-300 transition-colors">Email Us</h4>
+                    <a href="mailto:info@awsdevopstraininginhyderabad.com" itemProp="email" className="text-lg sm:text-xl font-bold text-purple-400 hover:text-purple-300 transition-colors break-all sm:break-normal">
+                      info@awsdevopstraininginhyderabad.com
+                    </a>
+                    <p className="text-sm text-gray-400 mt-2">Get detailed course information and career guidance</p>
+                  </div>
+                </div>
+              </div>
+
             </div>
 
             {/* Quick Contact Form */}
@@ -1244,7 +1275,7 @@ Interest: ${data.interest}
 This user is requesting access to ${selectedCourse} course details.
                 `;
                 
-                const mailtoLink = `mailto:contact@awsdevopstraining.com?subject=Course Access Request - ${selectedCourse}&body=${encodeURIComponent(emailBody)}`;
+                const mailtoLink = `mailto:info@awsdevopstraininginhyderabad.com?subject=Course Access Request - ${selectedCourse}&body=${encodeURIComponent(emailBody)}`;
                 window.open(mailtoLink, '_blank');
                 
                 alert('Email client opened. Please send the email to complete your request.');
@@ -1350,10 +1381,55 @@ Thank you!`;
       </button>
 
       {/* Simple Footer */}
-      <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/10 py-6 text-center">
-        <p className="text-gray-400 text-sm">
-          © 2025 AWS DevOps Training Academy. All rights reserved.
-        </p>
+      <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/10 py-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+            {/* Contact Info */}
+            <div className="text-center md:text-left">
+              <h4 className="text-white font-semibold mb-3">Contact Us</h4>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div className="flex items-center justify-center md:justify-start gap-2">
+                  <svg className="w-4 h-4 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  <a href="tel:+919885543638" className="hover:text-green-300 transition-colors">+91-98855 43638</a>
+                </div>
+                <div className="flex items-center justify-center md:justify-start gap-2">
+                  <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <a href="mailto:info@awsdevopstraininginhyderabad.com" className="hover:text-purple-300 transition-colors break-all">info@awsdevopstraininginhyderabad.com</a>
+                </div>
+              </div>
+            </div>
+            
+            {/* Quick Links */}
+            <div className="text-center">
+              <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+              <div className="space-y-2 text-sm text-gray-400">
+                <div><a href="#courses" className="hover:text-blue-300 transition-colors">Courses</a></div>
+                <div><a href="#contact" className="hover:text-blue-300 transition-colors">Contact</a></div>
+                <div><a href="#about" className="hover:text-blue-300 transition-colors">About</a></div>
+              </div>
+            </div>
+            
+            {/* Address */}
+            <div className="text-center md:text-right">
+              <h4 className="text-white font-semibold mb-3">Address</h4>
+              <div className="text-sm text-gray-400">
+                <p>Aditya Enclave, Nilgiri Block</p>
+                <p>506A/1, Basti Road</p>
+                <p>Hyderabad, Telangana 500018</p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/10 pt-6 text-center">
+            <p className="text-gray-400 text-sm">
+              © 2025 AWS DevOps Training Academy. All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
       </div>
     </>
