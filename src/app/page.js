@@ -1076,7 +1076,7 @@ Looking forward to hearing from you!`;
                       </svg>
                     </div>
                     <div>
-                      <h5 className="font-bold text-gray-900 text-sm">AWS DevOps Training Hyderabad</h5>
+                      <h5 className="font-bold text-gray-900 text-sm">AWS DevOps Training in Hyderabad</h5>
                       <p className="text-xs text-gray-600 mt-1">
                         Aditya enclave, nilgiri block<br/>
                         near vamsi Installation, 506A/1<br/>
