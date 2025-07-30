@@ -58,7 +58,7 @@ export const metadata = {
     canonical: "/"
   },
   verification: {
-    google: "nNCSvB7MKsGApdY2ZzqPd1TvWZRrncl3G-zP0pzDnW4", // Replace with actual code
+    google: "5uRuR2EN4bowbg4gGF1LW9XkXS0SBgaiC4CVt5J5ta4", // Replace with actual code
     yandex: "your-yandex-verification-code", // Replace with actual code
     bing: "your-bing-verification-code" // Replace with actual code
   }
