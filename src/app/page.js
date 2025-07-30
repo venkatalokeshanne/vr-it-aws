@@ -419,11 +419,13 @@ export default function Home() {
               </div>
 
               {/* Course Image */}
-              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+              <div className="mb-6 h-96 rounded-xl overflow-hidden">
                 <img 
                   src="/cloud.webp" 
                   alt="AWS Cloud Fundamentals Course" 
                   className="w-full h-full object-cover"
+                  width="700"
+                  height="700"
                 />
               </div>
               
@@ -500,11 +502,13 @@ export default function Home() {
               </div>
 
               {/* Course Image */}
-              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+              <div className="mb-6 h-96 rounded-xl overflow-hidden">
                 <img 
                   src="/devops.jpg" 
                   alt="AWS DevOps Engineering Course" 
                   className="w-full h-full object-cover"
+                  width="700"
+                  height="700"
                 />
               </div>
               
@@ -582,11 +586,13 @@ export default function Home() {
               </div>
 
               {/* Course Image */}
-              <div className="mb-6 h-48 rounded-xl overflow-hidden">
+              <div className="mb-6 h-96 rounded-xl overflow-hidden">
                 <img 
                   src="/data.png" 
                   alt="AWS Data Engineering Course" 
                   className="w-full h-full object-cover"
+                  width="700"
+                  height="700"
                 />
               </div>
               
