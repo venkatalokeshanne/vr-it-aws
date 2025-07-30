@@ -1,6 +1,6 @@
 import Script from 'next/script'
 
-export default function Analytics() {
+export default function AnalyticsGoogle() {
   return (
     <>
       {/* Google Tag Manager */}
