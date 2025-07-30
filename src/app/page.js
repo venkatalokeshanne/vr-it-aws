@@ -1383,7 +1383,7 @@ Thank you!`;
       {/* Simple Footer */}
       <footer className="bg-slate-900/50 backdrop-blur-sm border-t border-white/10 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-6">
             {/* Contact Info */}
             <div className="text-center md:text-left">
               <h4 className="text-white font-semibold mb-3">Contact Us</h4>
@@ -1400,16 +1400,6 @@ Thank you!`;
                   </svg>
                   <a href="mailto:info@awsdevopstraininginhyderabad.com" className="hover:text-purple-300 transition-colors break-all">info@awsdevopstraininginhyderabad.com</a>
                 </div>
-              </div>
-            </div>
-            
-            {/* Quick Links */}
-            <div className="text-center">
-              <h4 className="text-white font-semibold mb-3">Quick Links</h4>
-              <div className="space-y-2 text-sm text-gray-400">
-                <div><a href="#courses" className="hover:text-blue-300 transition-colors">Courses</a></div>
-                <div><a href="#contact" className="hover:text-blue-300 transition-colors">Contact</a></div>
-                <div><a href="#about" className="hover:text-blue-300 transition-colors">About</a></div>
               </div>
             </div>
             
