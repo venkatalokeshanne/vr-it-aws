@@ -17,13 +17,9 @@ export default function Home() {
   const router = useRouter();
 
   const handleEnrollment = (courseName = '') => {
-    // Set the course and show access form first
-    setSelectedCourse(courseName || 'General Enrollment');
+    setSelectedCourse(courseName);
     setCoursesModal(false);
-    
-    // Set pending action as enrollment instead of course navigation
-    setPendingCourseRoute('enrollment');
-    setCourseAccessModal(true);
+    setEnrollmentModal(true);
   };
 
   const handleViewCourses = () => {
@@ -56,6 +52,23 @@ export default function Home() {
   return (
     <>
       <LocalBusinessSchema />
+      
+      {/* Floating Mobile Phone Button - All Devices */}
+      <div className="fixed bottom-4 left-4 z-50">
+        <a 
+          href="tel:+919885543638" 
+          className="flex items-center gap-2 bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-3 rounded-full shadow-2xl hover:shadow-green-500/25 transition-all duration-300 transform hover:scale-105 animate-pulse"
+        >
+          <svg 
+            className="w-5 h-5" 
+            fill="currentColor" 
+            viewBox="0 0 20 20"
+          >
+            <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+          </svg>
+          <span className="font-semibold text-sm">+91 98855 43638</span>
+        </a>
+      </div>
       
       {/* Hidden SEO Content for Search Engines */}
       <div className="sr-only" aria-hidden="true">
@@ -1194,23 +1207,19 @@ This user is requesting access to detailed information about the ${selectedCours
                 };
 
                 // Initialize EmailJS with your public key
-                emailjs.init('rRzS4bf_NvOFsogXv'); // Replace with your EmailJS public key
+                emailjs.init('nrA3P33HTKo5srFaN'); // Updated EmailJS public key
                 
                 await emailjs.send(
-                  'service_vk9hhko', // Replace with your EmailJS service ID
-                  'template_62znhua', // Replace with your EmailJS template ID
+                  'service_u5pa6mf', // Updated EmailJS service ID
+                  'template_vnz0219', // Updated EmailJS template ID
                   templateParams
                 );
 
                 alert('Thank you! We\'ve received your request and will send you the course details shortly.');
                 
-                // Close modal and handle next action
+                // Close modal and navigate to course
                 setCourseAccessModal(false);
-                if (pendingCourseRoute === 'enrollment') {
-                  // Open enrollment modal after form submission
-                  setEnrollmentModal(true);
-                } else if (pendingCourseRoute) {
-                  // Navigate to course details page
+                if (pendingCourseRoute) {
                   router.push(pendingCourseRoute);
                 }
               } catch (error) {
@@ -1223,23 +1232,20 @@ Name: ${data.name}
 Email: ${data.email}
 Phone: ${data.phone}
 Course: ${data.course}
-Message: ${data.message || 'No message provided'}
+Experience: ${data.experience}
+Interest: ${data.interest}
 
 This user is requesting access to ${selectedCourse} course details.
                 `;
                 
-                const mailtoLink = `mailto:mevlokia@gmail.com?subject=Course Access Request - ${selectedCourse}&body=${encodeURIComponent(emailBody)}`;
+                const mailtoLink = `mailto:contact@awsdevopstraining.com?subject=Course Access Request - ${selectedCourse}&body=${encodeURIComponent(emailBody)}`;
                 window.open(mailtoLink, '_blank');
                 
                 alert('Email client opened. Please send the email to complete your request.');
                 
-                // Close modal and handle next action
+                // Close modal and navigate to course
                 setCourseAccessModal(false);
-                if (pendingCourseRoute === 'enrollment') {
-                  // Open enrollment modal after form submission
-                  setEnrollmentModal(true);
-                } else if (pendingCourseRoute) {
-                  // Navigate to course details page
+                if (pendingCourseRoute) {
                   router.push(pendingCourseRoute);
                 }
               }
@@ -1329,10 +1335,10 @@ Thank you!`;
           const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
           window.open(whatsappURL, '_blank');
         }}
-        className="fixed bottom-6 right-6 z-40 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 animate-pulse"
+        className="fixed bottom-4 right-6 z-40 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 transform hover:scale-110 animate-pulse"
         title="Chat on WhatsApp"
       >
-        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.787"/>
         </svg>
       </button>
