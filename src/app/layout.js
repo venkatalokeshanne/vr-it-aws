@@ -14,8 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data | Hyderabad",
-  description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Industry Certifications | Ameerpet, Hyderabad | Join 500+ Success Stories!",
+  title: "AWS Devops training in hyderabad, AWS data engineer online training | Cloud • DevOps • Data | Hyderabad",
+  description: "Premier AWS DevOps & Data Engineering Training Institute in Hyderabad. Expert-led courses in Cloud Computing, Kubernetes, Docker, Jenkins with hands-on projects, industry certifications & guaranteed job placement assistance.",
   keywords: "AWS training Hyderabad, AWS cloud training, DevOps training Hyderabad, AWS data engineering, AWS certification Hyderabad, cloud computing training, Ameerpet AWS institute, comprehensive AWS course, Hyderabad IT training, placement guaranteed AWS training",
   authors: [{ name: "AWS Devops Training Acadamy" }],
   creator: "AWS Devops Training Acadamy",
@@ -35,8 +35,8 @@ export const metadata = {
     locale: "en_IN",
     url: "/",
     siteName: "AWS Devops Training Acadamy",
-    title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
-    description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
+    title: "AWS Devops training in hyderabad, AWS data engineer online training | Cloud • DevOps • Data",
+    description: "Premier AWS DevOps & Data Engineering Training Institute in Hyderabad. Expert-led courses in Cloud Computing, Kubernetes, Docker, Jenkins with hands-on projects & job placement assistance.",
     images: [
       {
         url: "/logo.png",
@@ -50,8 +50,8 @@ export const metadata = {
     card: "summary_large_image",
     site: "@awscloudhyderabad",
     creator: "@awscloudhyderabad",
-    title: "🎯 Complete AWS Training Hub | Cloud • DevOps • Data",
-    description: "✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad",
+    title: "AWS Devops training in hyderabad, AWS data engineer online training | Cloud • DevOps • Data",
+    description: "Premier AWS DevOps & Data Engineering Training Institute in Hyderabad. Expert-led courses in Cloud Computing, Kubernetes, Docker, Jenkins with hands-on projects & job placement assistance.",
     images: ["/logo.png"]
   },
   alternates: {
@@ -154,8 +154,8 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/logo.png" />
         
         {/* Additional Open Graph tags for better WhatsApp sharing */}
-        <meta property="og:title" content="🎯 Complete AWS Training Hub | Cloud • DevOps • Data" />
-        <meta property="og:description" content="✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad" />
+        <meta property="og:title" content="AWS Devops training in hyderabad, AWS data engineer online training | Cloud • DevOps • Data" />
+        <meta property="og:description" content="Premier AWS DevOps & Data Engineering Training Institute in Hyderabad. Expert-led courses in Cloud Computing, Kubernetes, Docker, Jenkins with hands-on projects & job placement assistance." />
         <meta property="og:image" content="/logo.png" />
         <meta property="og:image:width" content="400" />
         <meta property="og:image:height" content="400" />
@@ -166,8 +166,8 @@ export default function RootLayout({ children }) {
         
         {/* Twitter Card tags */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="🎯 Complete AWS Training Hub | Cloud • DevOps • Data" />
-        <meta name="twitter:description" content="✅ Master All AWS Services with 100% Placement Guarantee! Expert Trainers • Live Projects • Certifications | Ameerpet, Hyderabad" />
+        <meta name="twitter:title" content="AWS Devops training in hyderabad, AWS data engineer online training | Cloud • DevOps • Data" />
+        <meta name="twitter:description" content="Premier AWS DevOps & Data Engineering Training Institute in Hyderabad. Expert-led courses in Cloud Computing, Kubernetes, Docker, Jenkins with hands-on projects & job placement assistance." />
         <meta name="twitter:image" content="/logo.png" />
         
         <meta name="geo.region" content="IN-TG" />
