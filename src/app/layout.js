@@ -132,10 +132,10 @@ export default function RootLayout({ children }) {
       "bestRating": "5"
     },
     "sameAs": [
-      "https://facebook.com/awscloudtraininghyderabad",
+      "https://www.facebook.com/awsdevopstrainingacademy/",
       "https://twitter.com/awscloudhyderabad",
-      "https://linkedin.com/company/awscloudtraininghyderabad",
-      "https://instagram.com/awscloudtraininghyderabad"
+      "https://www.linkedin.com/in/aws-devops-training-234284137",
+      "https://www.instagram.com/awsdevopstraining"
     ]
   };
 
