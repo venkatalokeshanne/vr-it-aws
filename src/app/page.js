@@ -1413,6 +1413,17 @@ Thank you!`;
             <p className="text-gray-400 text-sm">
               © 2025 AWS DevOps Training Academy. All rights reserved.
             </p>
+            <p className="text-xs text-gray-500 mt-2">
+              designed & developed by{' '}
+              <a 
+                href="https://www.linkedin.com/in/venkatalokesh" 
+                className="text-gray-400 hover:text-orange-400 transition-colors duration-200 underline decoration-dotted underline-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Devotree
+              </a>
+            </p>
           </div>
         </div>
       </footer>
