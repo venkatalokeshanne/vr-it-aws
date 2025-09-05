@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated data files
+/data/
+
 # production
 /build
 

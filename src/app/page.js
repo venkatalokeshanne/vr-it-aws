@@ -1,11 +1,12 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import emailjs from '@emailjs/browser';
 import EnrollmentModal from '../components/EnrollmentModal';
 import CoursesModal from '../components/CoursesModal';
 import BrochureModal from '../components/BrochureModal';
 import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import { getAllCourses } from '@/lib/staticCourseData';
 
 export default function Home() {
   const [enrollmentModal, setEnrollmentModal] = useState(false);
@@ -14,7 +15,23 @@ export default function Home() {
   const [courseAccessModal, setCourseAccessModal] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('');
   const [pendingCourseRoute, setPendingCourseRoute] = useState('');
+  const [courses, setCourses] = useState([]);
   const router = useRouter();
+
+  // Load courses on component mount
+  useEffect(() => {
+    const loadCourses = () => {
+      try {
+        const courseData = getAllCourses();
+        setCourses(courseData);
+      } catch (error) {
+        console.error('Error loading courses:', error);
+        setCourses([]);
+      }
+    };
+
+    loadCourses();
+  }, []);
 
   const handleEnrollment = (courseName = '') => {
     setSelectedCourse(courseName);
@@ -30,21 +47,81 @@ export default function Home() {
     setBrochureModal(true);
   };
 
-  const handleLearnMore = (courseName) => {
+  // Helper function to get course styling based on course type/slug
+  const getCourseStyle = (courseSlug) => {
+    switch (courseSlug) {
+      case 'aws-cloud-fundamentals':
+        return {
+          gradient: 'from-blue-400/40 to-cyan-400/40',
+          border: 'border-blue-400/60 hover:border-blue-300/80',
+          shadow: 'hover:shadow-blue-400/30',
+          iconBg: 'from-blue-400 to-blue-600',
+          iconShadow: 'shadow-blue-500/50',
+          badgeBg: 'bg-blue-500/30',
+          badgeText: 'text-blue-200',
+          chipBg: 'bg-blue-500/30',
+          chipText: 'text-blue-200',
+          buttonGrad: 'from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500',
+          buttonShadow: 'hover:shadow-blue-500/50',
+          icon: '☁️',
+          badge: 'MOST POPULAR'
+        };
+      case 'aws-devops-engineering':
+        return {
+          gradient: 'from-purple-400/40 to-pink-400/40',
+          border: 'border-purple-400/60 hover:border-purple-300/80',
+          shadow: 'hover:shadow-purple-400/30',
+          iconBg: 'from-purple-400 to-purple-600',
+          iconShadow: 'shadow-purple-500/50',
+          badgeBg: 'bg-purple-500/30',
+          badgeText: 'text-purple-200',
+          chipBg: 'bg-purple-500/30',
+          chipText: 'text-purple-200',
+          buttonGrad: 'from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500',
+          buttonShadow: 'hover:shadow-purple-500/50',
+          icon: '⚙️',
+          badge: 'HIGH DEMAND'
+        };
+      case 'aws-data-engineering':
+        return {
+          gradient: 'from-pink-400/40 to-red-400/40',
+          border: 'border-pink-400/60 hover:border-pink-300/80',
+          shadow: 'hover:shadow-pink-400/30',
+          iconBg: 'from-pink-400 to-pink-600',
+          iconShadow: 'shadow-pink-500/50',
+          badgeBg: 'bg-pink-500/30',
+          badgeText: 'text-pink-200',
+          chipBg: 'bg-pink-500/30',
+          chipText: 'text-pink-200',
+          buttonGrad: 'from-pink-500 to-pink-600 hover:from-pink-400 hover:to-pink-500',
+          buttonShadow: 'hover:shadow-pink-500/50',
+          icon: '📊',
+          badge: 'HIGHEST SALARY'
+        };
+      default:
+        return {
+          gradient: 'from-gray-400/40 to-gray-600/40',
+          border: 'border-gray-400/60 hover:border-gray-300/80',
+          shadow: 'hover:shadow-gray-400/30',
+          iconBg: 'from-gray-400 to-gray-600',
+          iconShadow: 'shadow-gray-500/50',
+          badgeBg: 'bg-gray-500/30',
+          badgeText: 'text-gray-200',
+          chipBg: 'bg-gray-500/30',
+          chipText: 'text-gray-200',
+          buttonGrad: 'from-gray-500 to-gray-600 hover:from-gray-400 hover:to-gray-500',
+          buttonShadow: 'hover:shadow-gray-500/50',
+          icon: '🎓',
+          badge: 'NEW'
+        };
+    }
+  };
+
+  const handleLearnMore = (courseName, courseSlug) => {
     // Set the course and route to navigate to after form submission
     setSelectedCourse(courseName);
-    switch (courseName) {
-      case 'AWS Cloud Fundamentals':
-        setPendingCourseRoute('/courses/aws-cloud-fundamentals');
-        break;
-      case 'AWS DevOps Engineering':
-        setPendingCourseRoute('/courses/aws-devops-engineering');
-        break;
-      case 'AWS Data Engineering':
-        setPendingCourseRoute('/courses/aws-data-engineering');
-        break;
-      default:
-        setPendingCourseRoute('');
+    if (courseSlug) {
+      setPendingCourseRoute(`/courses/${courseSlug}`);
     }
     setCourseAccessModal(true);
   };
@@ -175,80 +252,45 @@ export default function Home() {
               </div>
               
               <div className="grid lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-8">
-                {/* AWS Cloud Fundamentals - TOP PRIORITY */}
-                <div className="group relative transform hover:scale-105 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-r from-blue-400/40 to-cyan-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-blue-400/60 rounded-2xl p-6 hover:border-blue-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-blue-400/30">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-blue-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-blue-500/50">
-                        <span className="text-2xl">☁️</span>
+                {courses.slice(0, 3).map((course, index) => {
+                  const style = getCourseStyle(course.slug?.current);
+                  return (
+                    <div key={course._id} className="group relative transform hover:scale-105 transition-all duration-300">
+                      <div className={`absolute inset-0 bg-gradient-to-r ${style.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse`}></div>
+                      <div className={`relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 ${style.border} rounded-2xl p-6 transition-all duration-300 hover:shadow-xl ${style.shadow}`}>
+                        <div className="text-center">
+                          <div className={`w-16 h-16 bg-gradient-to-r ${style.iconBg} rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl ${style.iconShadow}`}>
+                            <span className="text-2xl">{style.icon}</span>
+                          </div>
+                          <div className={`${style.badgeBg} ${style.badgeText} px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce`}>
+                            {style.badge}
+                          </div>
+                          <h3 className="text-xl font-bold text-white mb-3">{course.title}</h3>
+                          <p className="text-gray-300 mb-4 text-sm leading-relaxed">
+                            {course.subtitle || course.description}
+                          </p>
+                          <div className="flex justify-center items-center space-x-2 mb-4">
+                            <span className={`${style.chipBg} ${style.chipText} px-2 py-1 rounded-full text-xs font-semibold`}>
+                              {course.duration}
+                            </span>
+                            <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">
+                              ${course.price}
+                              {course.originalPrice && course.originalPrice > course.price && (
+                                <span className="line-through ml-1">${course.originalPrice}</span>
+                              )}
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => handleLearnMore(course.title, course.slug?.current)}
+                            className={`w-full bg-gradient-to-r ${style.buttonGrad} text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg ${style.buttonShadow} transform hover:scale-105`}
+                          >
+                            {index === 0 ? '🎯 Start Journey' : index === 1 ? '🔧 Master DevOps' : '📈 Engineer Data'} →
+                          </button>
+                        </div>
                       </div>
-                      <div className="bg-blue-500/30 text-blue-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">MOST POPULAR</div>
-                      <h3 className="text-xl font-bold text-white mb-3">AWS Cloud Fundamentals</h3>
-                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Master cloud computing from basics to advanced architecture.</p>
-                      <div className="flex justify-center items-center space-x-2 mb-4">
-                        <span className="bg-blue-500/30 text-blue-200 px-2 py-1 rounded-full text-xs font-semibold">6 Months</span>
-                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹45K-₹80K</span>
-                      </div>
-                      <button
-                        onClick={() => handleLearnMore('AWS Cloud Fundamentals')}
-                        className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-400 hover:to-blue-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-blue-500/50 transform hover:scale-105"
-                      >
-                        🎯 Start Journey →
-                      </button>
                     </div>
-                  </div>
-                </div>
-
-                {/* AWS DevOps Engineering - TOP PRIORITY */}
-                <div className="group relative transform hover:scale-105 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-r from-purple-400/40 to-pink-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-purple-400/60 rounded-2xl p-6 hover:border-purple-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-purple-400/30">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-purple-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-purple-500/50">
-                        <span className="text-2xl">⚙️</span>
-                      </div>
-                      <div className="bg-purple-500/30 text-purple-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">HIGH DEMAND</div>
-                      <h3 className="text-xl font-bold text-white mb-3">AWS DevOps Engineering</h3>
-                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Master CI/CD, Docker, Kubernetes & Infrastructure automation.</p>
-                      <div className="flex justify-center items-center space-x-2 mb-4">
-                        <span className="bg-purple-500/30 text-purple-200 px-2 py-1 rounded-full text-xs font-semibold">8 Months</span>
-                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹60K-₹120K</span>
-                      </div>
-                      <button
-                        onClick={() => handleLearnMore('AWS DevOps Engineering')}
-                        className="w-full bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-purple-500/50 transform hover:scale-105"
-                      >
-                        🔧 Master DevOps →
-                      </button>
-                    </div>
-                  </div>
-                </div>
-
-                {/* AWS Data Engineering - TOP PRIORITY */}
-                <div className="group relative transform hover:scale-105 transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-r from-pink-400/40 to-red-400/40 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse"></div>
-                  <div className="relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 border-pink-400/60 rounded-2xl p-6 hover:border-pink-300/80 transition-all duration-300 hover:shadow-xl hover:shadow-pink-400/30">
-                    <div className="text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-pink-600 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl shadow-pink-500/50">
-                        <span className="text-2xl">📊</span>
-                      </div>
-                      <div className="bg-pink-500/30 text-pink-200 px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce">HIGHEST SALARY</div>
-                      <h3 className="text-xl font-bold text-white mb-3">AWS Data Engineering</h3>
-                      <p className="text-gray-300 mb-4 text-sm leading-relaxed">Build big data pipelines, analytics platforms & data lakes.</p>
-                      <div className="flex justify-center items-center space-x-2 mb-4">
-                        <span className="bg-pink-500/30 text-pink-200 px-2 py-1 rounded-full text-xs font-semibold">7 Months</span>
-                        <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">₹70K-₹150K</span>
-                      </div>
-                      <button
-                        onClick={() => handleLearnMore('AWS Data Engineering')}
-                        className="w-full bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-400 hover:to-pink-500 text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg hover:shadow-pink-500/50 transform hover:scale-105"
-                      >
-                        📈 Engineer Data →
-                      </button>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })}
               </div>
               
               {/* Compact Benefits Banner */}
@@ -1020,9 +1062,11 @@ Looking forward to hearing from you!`;
                     name="course"
                     className="w-full px-4 py-3 bg-slate-700/50 border border-slate-600 rounded-xl text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
                   >
-                    <option value="AWS Cloud Fundamentals">AWS Cloud Fundamentals</option>
-                    <option value="AWS DevOps Engineering">AWS DevOps Engineering</option>
-                    <option value="AWS Data Engineering">AWS Data Engineering</option>
+                    {courses.map((course) => (
+                      <option key={course._id} value={course.title}>
+                        {course.title}
+                      </option>
+                    ))}
                     <option value="All Courses">All Courses</option>
                   </select>
                 </div>

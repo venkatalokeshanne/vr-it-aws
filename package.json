@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "npm run generate-static-courses && next dev --turbopack",
+    "build": "npm run generate-static-courses && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "generate-static-courses": "node scripts/generate-static-courses.js",
+    "fetch-courses": "node scripts/fetch-courses.js",
+    "show-courses": "node scripts/show-courses.js",
+    "seed-courses": "node scripts/seed-courses.js",
+    "seed-data-engineering": "node scripts/seed-aws-data-engineering.js",
+    "seed-devops": "node scripts/seed-devops.js"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@sanity/client": "^6.21.3",
     "@vercel/analytics": "^1.5.0",
     "next": "15.4.4",
     "react": "19.1.0",
@@ -18,6 +25,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
+    "dotenv": "^17.2.2",
     "eslint": "^9",
     "eslint-config-next": "15.4.4",
     "tailwindcss": "^4"
