@@ -225,6 +225,32 @@ export default {
     "ogDescription": "Become a DevOps Engineer with AWS, Docker, Kubernetes training. Live projects, expert mentorship, and guaranteed job placement.",
     "ogImage": null,
     "ogTitle": "AWS DevOps Engineering Training - Master CI/CD & Automation",
+    "seoHeadings": [
+      {
+        "level": "h1",
+        "text": "AWS DevOps Engineering Training - Complete CI/CD and Automation Course"
+      },
+      {
+        "level": "h2",
+        "text": "Master DevOps Practices with AWS Tools and Technologies"
+      },
+      {
+        "level": "h2",
+        "text": "AWS DevOps Pipeline Development and Infrastructure Automation"
+      },
+      {
+        "level": "h3",
+        "text": "DevOps Engineer Certification and Professional Skills Training"
+      },
+      {
+        "level": "h3",
+        "text": "AWS DevOps Best Practices and Cloud Operations Management"
+      },
+      {
+        "level": "h4",
+        "text": "DevOps Career Development and Industry Expertise"
+      }
+    ],
     "structuredData": {
       "courseLevel": "Intermediate",
       "instructor": "Senior DevOps Engineer (10+ years)",

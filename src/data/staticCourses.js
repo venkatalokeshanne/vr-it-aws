@@ -1,5 +1,5 @@
 // Auto-generated static course data
-// Generated on: 2025-09-05T22:09:56.807Z
+// Generated on: 2025-09-05T22:52:57.073Z
 
 const coursesData = [
   {
@@ -214,6 +214,32 @@ const coursesData = [
       "ogDescription": "Transform your career with AWS Data Engineering. Learn from industry experts, work on real projects, get placed in top data companies.",
       "ogImage": null,
       "ogTitle": "AWS Data Engineering Training - Build Scalable Data Pipelines",
+      "seoHeadings": [
+        {
+          "level": "h1",
+          "text": "AWS Data Engineering Training - Big Data Analytics and Processing Course"
+        },
+        {
+          "level": "h2",
+          "text": "Master Data Engineering with AWS Analytics and Machine Learning Services"
+        },
+        {
+          "level": "h2",
+          "text": "AWS Data Pipeline Development and Analytics Solutions Training"
+        },
+        {
+          "level": "h3",
+          "text": "Data Engineer Certification and Professional Data Processing Skills"
+        },
+        {
+          "level": "h3",
+          "text": "AWS Data Engineering Best Practices and Scalable Architecture Design"
+        },
+        {
+          "level": "h4",
+          "text": "Data Engineering Career Growth and Industry Leadership"
+        }
+      ],
       "structuredData": {
         "courseLevel": "Advanced",
         "instructor": "Senior Data Engineer (12+ years)",
@@ -412,6 +438,32 @@ const coursesData = [
       "ogDescription": "Join Hyderabad's #1 AWS training institute. Master cloud fundamentals with industry experts. 100% placement assistance guaranteed.",
       "ogImage": null,
       "ogTitle": "AWS Cloud Fundamentals Training in Hyderabad - VR IT Academy",
+      "seoHeadings": [
+        {
+          "level": "h1",
+          "text": "AWS Cloud Fundamentals Training Course - Comprehensive Cloud Computing Education"
+        },
+        {
+          "level": "h2",
+          "text": "Master AWS Cloud Computing Basics - Beginner to Professional Level"
+        },
+        {
+          "level": "h2",
+          "text": "AWS Cloud Infrastructure and Services Training Program"
+        },
+        {
+          "level": "h3",
+          "text": "Cloud Computing Certification Preparation Course"
+        },
+        {
+          "level": "h3",
+          "text": "AWS Fundamentals Learning Path and Career Development"
+        },
+        {
+          "level": "h4",
+          "text": "Cloud Technology Skills Building Workshop"
+        }
+      ],
       "structuredData": {
         "courseLevel": "Beginner",
         "instructor": "AWS Certified Cloud Architect",
@@ -665,6 +717,32 @@ const coursesData = [
       "ogDescription": "Become a DevOps Engineer with AWS, Docker, Kubernetes training. Live projects, expert mentorship, and guaranteed job placement.",
       "ogImage": null,
       "ogTitle": "AWS DevOps Engineering Training - Master CI/CD & Automation",
+      "seoHeadings": [
+        {
+          "level": "h1",
+          "text": "AWS DevOps Engineering Training - Complete CI/CD and Automation Course"
+        },
+        {
+          "level": "h2",
+          "text": "Master DevOps Practices with AWS Tools and Technologies"
+        },
+        {
+          "level": "h2",
+          "text": "AWS DevOps Pipeline Development and Infrastructure Automation"
+        },
+        {
+          "level": "h3",
+          "text": "DevOps Engineer Certification and Professional Skills Training"
+        },
+        {
+          "level": "h3",
+          "text": "AWS DevOps Best Practices and Cloud Operations Management"
+        },
+        {
+          "level": "h4",
+          "text": "DevOps Career Development and Industry Expertise"
+        }
+      ],
       "structuredData": {
         "courseLevel": "Intermediate",
         "instructor": "Senior DevOps Engineer (10+ years)",

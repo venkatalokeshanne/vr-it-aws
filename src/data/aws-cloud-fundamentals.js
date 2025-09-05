@@ -171,6 +171,32 @@ export default {
     "ogDescription": "Join Hyderabad's #1 AWS training institute. Master cloud fundamentals with industry experts. 100% placement assistance guaranteed.",
     "ogImage": null,
     "ogTitle": "AWS Cloud Fundamentals Training in Hyderabad - VR IT Academy",
+    "seoHeadings": [
+      {
+        "level": "h1",
+        "text": "AWS Cloud Fundamentals Training Course - Comprehensive Cloud Computing Education"
+      },
+      {
+        "level": "h2",
+        "text": "Master AWS Cloud Computing Basics - Beginner to Professional Level"
+      },
+      {
+        "level": "h2",
+        "text": "AWS Cloud Infrastructure and Services Training Program"
+      },
+      {
+        "level": "h3",
+        "text": "Cloud Computing Certification Preparation Course"
+      },
+      {
+        "level": "h3",
+        "text": "AWS Fundamentals Learning Path and Career Development"
+      },
+      {
+        "level": "h4",
+        "text": "Cloud Technology Skills Building Workshop"
+      }
+    ],
     "structuredData": {
       "courseLevel": "Beginner",
       "instructor": "AWS Certified Cloud Architect",

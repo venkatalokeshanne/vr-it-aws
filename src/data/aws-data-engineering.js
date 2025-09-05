@@ -211,6 +211,32 @@ export default {
     "ogDescription": "Transform your career with AWS Data Engineering. Learn from industry experts, work on real projects, get placed in top data companies.",
     "ogImage": null,
     "ogTitle": "AWS Data Engineering Training - Build Scalable Data Pipelines",
+    "seoHeadings": [
+      {
+        "level": "h1",
+        "text": "AWS Data Engineering Training - Big Data Analytics and Processing Course"
+      },
+      {
+        "level": "h2",
+        "text": "Master Data Engineering with AWS Analytics and Machine Learning Services"
+      },
+      {
+        "level": "h2",
+        "text": "AWS Data Pipeline Development and Analytics Solutions Training"
+      },
+      {
+        "level": "h3",
+        "text": "Data Engineer Certification and Professional Data Processing Skills"
+      },
+      {
+        "level": "h3",
+        "text": "AWS Data Engineering Best Practices and Scalable Architecture Design"
+      },
+      {
+        "level": "h4",
+        "text": "Data Engineering Career Growth and Industry Leadership"
+      }
+    ],
     "structuredData": {
       "courseLevel": "Advanced",
       "instructor": "Senior Data Engineer (12+ years)",

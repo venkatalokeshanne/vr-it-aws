@@ -126,6 +126,17 @@ export default function AWSDataEngineering() {
               {courseData.cardImageUrl && (
                 <meta itemProp="image" content={courseData.cardImageUrl} />
               )}
+              
+              {/* Hidden SEO Headings */}
+              {courseData.seo?.seoHeadings?.map((heading, index) => {
+                const HeadingTag = heading.level;
+                return (
+                  <HeadingTag key={index} className="sr-only">
+                    {heading.text}
+                  </HeadingTag>
+                );
+              })}
+              
               <div className="flex items-center justify-center gap-6 mt-8">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-white">{courseData.duration}</div>

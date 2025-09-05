@@ -45,6 +45,10 @@ const query = `
       ogTitle,
       ogDescription,
       ogImage,
+      seoHeadings[] {
+        level,
+        text
+      },
       structuredData {
         courseLevel,
         instructor,
