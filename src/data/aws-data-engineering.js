@@ -1,7 +1,21 @@
 // Auto-generated course data for aws-data-engineering
 export default {
   "_createdAt": "2025-09-05T20:43:26Z",
-  "_id": "drafts.75ssDm9488HMMABZ1oGilK",
+  "_id": "75ssDm9488HMMABZ1oGilK",
+  "bannerImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-f3b5c044df9376284d5be5b4d0b5144f00c27ac7-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
+  "cardImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-03bb89997e924245ceddbdc355c836d4d3daefb1-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "curriculum": [
     {
       "moduleTitle": "Data Architecture Fundamentals",
@@ -114,16 +128,20 @@ export default {
     "Career placement assistance",
     "AWS certification preparation"
   ],
-  "heroImage": null,
+  "heroImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-0de5a2fdaeb4fbfdac5b07119b33f6f124e41b1d-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "level": "intermediate",
   "originalPrice": 799,
   "overview": [
     {
-      "_key": "c0ae803979056d1da44fd4b4a7ba4012",
       "_type": "block",
       "children": [
         {
-          "_key": "gVontOQlnz0gNs7vOcIb3e",
           "_type": "span",
           "text": "This comprehensive course covers the entire data engineering lifecycle on AWS. You will learn to design, build, and maintain robust data architectures that can handle massive scale and complex analytics workloads. Ideal for data professionals, software engineers, and analysts looking to transition into the high-demand field of data engineering with cloud-native solutions."
         }
@@ -177,16 +195,29 @@ export default {
   ],
   "published": true,
   "seo": {
+    "canonicalUrl": null,
     "keywords": [
-      "AWS Data Engineering",
-      "Data Lakes",
-      "Big Data",
-      "Data Pipelines",
-      "Machine Learning",
-      "Analytics"
+      "AWS Data Engineering Hyderabad",
+      "big data training Hyderabad",
+      "AWS Redshift training",
+      "data analytics course",
+      "data engineer training",
+      "AWS Glue training",
+      "machine learning pipeline",
+      "data engineering course Ameerpet"
     ],
-    "metaDescription": "Learn AWS data engineering with hands-on projects. Build data lakes, streaming pipelines, and ML workflows. Expert instruction and career support.",
-    "metaTitle": "AWS Data Engineering Course | Master Big Data & Analytics"
+    "metaDescription": "Master AWS Data Engineering with Redshift, Glue, Kinesis. Learn big data analytics, ML pipelines. Expert training with placement support in Hyderabad.",
+    "metaTitle": "AWS Data Engineering Training in Hyderabad | Big Data Analytics Course",
+    "ogDescription": "Transform your career with AWS Data Engineering. Learn from industry experts, work on real projects, get placed in top data companies.",
+    "ogImage": null,
+    "ogTitle": "AWS Data Engineering Training - Build Scalable Data Pipelines",
+    "structuredData": {
+      "courseLevel": "Advanced",
+      "instructor": "Senior Data Engineer (12+ years)",
+      "provider": "VR IT Academy",
+      "reviewCount": 780,
+      "reviewRating": 4.7
+    }
   },
   "slug": {
     "_type": "slug",
@@ -201,5 +232,8 @@ export default {
     "Interactive dashboards and reports",
     "Big data processing with EMR and Spark",
     "Data governance and security best practices"
-  ]
+  ],
+  "heroImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/0de5a2fdaeb4fbfdac5b07119b33f6f124e41b1d-1200x630.jpg",
+  "cardImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/03bb89997e924245ceddbdc355c836d4d3daefb1-1200x630.jpg",
+  "bannerImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/f3b5c044df9376284d5be5b4d0b5144f00c27ac7-1200x630.jpg"
 };

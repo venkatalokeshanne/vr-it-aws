@@ -2,6 +2,20 @@
 export default {
   "_createdAt": "2025-09-05T20:36:16Z",
   "_id": "gVontOQlnz0gNs7vOcI25m",
+  "bannerImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-0546ad23fa944d949486de59c2d5c86b2bdd1037-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
+  "cardImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-db67e429abb1584576d6b9635b65481147d95d82-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "curriculum": [
     {
       "moduleTitle": "AWS Cloud Introduction",
@@ -50,7 +64,7 @@ export default {
     }
   ],
   "description": "Start your cloud journey with comprehensive AWS fundamentals training. Learn core services, security best practices, and hands-on implementation.",
-  "duration": "6 weeks",
+  "duration": "16 weeks",
   "features": [
     "Live instructor-led sessions",
     "Hands-on lab exercises with real AWS services",
@@ -61,14 +75,22 @@ export default {
     "Access to course materials for lifetime",
     "Certificate of completion"
   ],
-  "heroImage": null,
+  "heroImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-94c19f9dfdd7d306dd75675173d5ed14f57a5c9d-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "level": "beginner",
   "originalPrice": 399,
   "overview": [
     {
+      "_key": "471f1dc9d68ae0fc7e3e4341f1e86c46",
       "_type": "block",
       "children": [
         {
+          "_key": "gVontOQlnz0gNs7vOcI4R6",
           "_type": "span",
           "text": "This comprehensive course introduces you to the fundamental concepts and core services of Amazon Web Services (AWS). You will learn essential cloud computing principles, explore key AWS services, and gain hands-on experience building scalable cloud solutions."
         }
@@ -76,9 +98,11 @@ export default {
       "style": "normal"
     },
     {
+      "_key": "ae44c9aac863729923b704018077a4aa",
       "_type": "block",
       "children": [
         {
+          "_key": "gVontOQlnz0gNs7vOcI4So",
           "_type": "span",
           "text": "Perfect for beginners with no prior cloud experience, this course provides a solid foundation for your cloud journey and prepares you for AWS certification exams."
         }
@@ -131,19 +155,29 @@ export default {
   ],
   "published": true,
   "seo": {
+    "canonicalUrl": null,
     "keywords": [
-      "AWS",
-      "Cloud Computing",
-      "AWS Training",
-      "AWS Fundamentals",
-      "Cloud Certification",
-      "AWS Course",
-      "EC2",
-      "S3",
-      "Lambda"
+      "AWS training Hyderabad",
+      "AWS cloud fundamentals",
+      "AWS certification Hyderabad",
+      "cloud computing training Ameerpet",
+      "AWS courses Hyderabad",
+      "AWS training institute",
+      "cloud fundamentals course",
+      "AWS basics training"
     ],
-    "metaDescription": "Master AWS fundamentals with hands-on training. Learn EC2, S3, Lambda, and more. Perfect for beginners. Get AWS certified. Enroll now!",
-    "metaTitle": "AWS Cloud Fundamentals Course | Learn AWS from Scratch - VR IT"
+    "metaDescription": "Master AWS Cloud Fundamentals in Hyderabad with hands-on training. Get AWS certified with guaranteed placement assistance. Join Ameerpet's top AWS institute.",
+    "metaTitle": "AWS Cloud Fundamentals Training in Hyderabad | VR IT Academy",
+    "ogDescription": "Join Hyderabad's #1 AWS training institute. Master cloud fundamentals with industry experts. 100% placement assistance guaranteed.",
+    "ogImage": null,
+    "ogTitle": "AWS Cloud Fundamentals Training in Hyderabad - VR IT Academy",
+    "structuredData": {
+      "courseLevel": "Beginner",
+      "instructor": "AWS Certified Cloud Architect",
+      "provider": "VR IT Academy",
+      "reviewCount": 1250,
+      "reviewRating": 4.8
+    }
   },
   "slug": {
     "_type": "slug",
@@ -159,5 +193,8 @@ export default {
     "Infrastructure as Code with CloudFormation",
     "Best practices for AWS architecture",
     "Hands-on experience with AWS Console and CLI"
-  ]
+  ],
+  "heroImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/94c19f9dfdd7d306dd75675173d5ed14f57a5c9d-1200x630.jpg",
+  "cardImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/db67e429abb1584576d6b9635b65481147d95d82-1200x630.jpg",
+  "bannerImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/0546ad23fa944d949486de59c2d5c86b2bdd1037-1200x630.jpg"
 };

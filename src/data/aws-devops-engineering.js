@@ -2,6 +2,20 @@
 export default {
   "_createdAt": "2025-09-05T21:19:54Z",
   "_id": "gVontOQlnz0gNs7vOcKZga",
+  "bannerImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-886f3c91dfd36fe3ffdd047b122b40867f93d151-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
+  "cardImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-ecfeaa94748543a647d4959e30b1b8078a50b96a-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "curriculum": [
     {
       "moduleTitle": "DevOps Fundamentals & AWS Overview",
@@ -114,7 +128,13 @@ export default {
     "Career placement assistance",
     "AWS certification preparation"
   ],
-  "heroImage": null,
+  "heroImage": {
+    "_type": "image",
+    "asset": {
+      "_ref": "image-0a4d801207fe25de65317ba73eb312355786a20a-1200x630-jpg",
+      "_type": "reference"
+    }
+  },
   "level": "intermediate",
   "originalPrice": 699,
   "overview": [
@@ -189,18 +209,29 @@ export default {
   ],
   "published": true,
   "seo": {
+    "canonicalUrl": null,
     "keywords": [
-      "AWS DevOps",
-      "CI/CD",
-      "CodePipeline",
-      "CloudFormation",
-      "DevOps Training",
-      "AWS Course",
-      "Infrastructure as Code",
-      "Automation"
+      "AWS DevOps training Hyderabad",
+      "DevOps course Hyderabad",
+      "Docker Kubernetes training",
+      "CI/CD pipeline course",
+      "DevOps engineer training",
+      "AWS DevOps certification",
+      "DevOps training Ameerpet",
+      "Jenkins training Hyderabad"
     ],
-    "metaDescription": "Learn AWS DevOps with hands-on CI/CD pipelines, infrastructure as code, and automation. Expert instruction and real projects. Enroll now!",
-    "metaTitle": "AWS DevOps Engineering Course | Master CI/CD & Infrastructure"
+    "metaDescription": "Learn AWS DevOps Engineering in Hyderabad with Docker, Kubernetes, CI/CD. Industry-expert training with real projects. Guaranteed placements in top companies.",
+    "metaTitle": "AWS DevOps Engineering Training in Hyderabad | Best DevOps Course",
+    "ogDescription": "Become a DevOps Engineer with AWS, Docker, Kubernetes training. Live projects, expert mentorship, and guaranteed job placement.",
+    "ogImage": null,
+    "ogTitle": "AWS DevOps Engineering Training - Master CI/CD & Automation",
+    "structuredData": {
+      "courseLevel": "Intermediate",
+      "instructor": "Senior DevOps Engineer (10+ years)",
+      "provider": "VR IT Academy",
+      "reviewCount": 950,
+      "reviewRating": 4.9
+    }
   },
   "slug": {
     "_type": "slug",
@@ -215,5 +246,8 @@ export default {
     "Container and serverless DevOps practices",
     "Monitoring, logging, and observability",
     "Security integration in DevOps workflows"
-  ]
+  ],
+  "heroImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/0a4d801207fe25de65317ba73eb312355786a20a-1200x630.jpg",
+  "cardImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/ecfeaa94748543a647d4959e30b1b8078a50b96a-1200x630.jpg",
+  "bannerImageUrl": "https://cdn.sanity.io/images/3hir6j0e/production/886f3c91dfd36fe3ffdd047b122b40867f93d151-1200x630.jpg"
 };

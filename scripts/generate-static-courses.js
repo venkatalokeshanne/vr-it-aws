@@ -11,7 +11,7 @@ const client = createClient({
 });
 
 const query = `
-  *[_type == "awsCourse" && published == true] {
+  *[_type == "awsCourse" && published == true && !(_id in path("drafts.**"))] {
     _id,
     title,
     slug,
@@ -22,6 +22,8 @@ const query = `
     price,
     originalPrice,
     heroImage,
+    cardImage,
+    bannerImage,
     overview,
     curriculum[] {
       moduleTitle,
@@ -38,19 +40,53 @@ const query = `
     seo {
       metaTitle,
       metaDescription,
-      keywords
+      keywords,
+      canonicalUrl,
+      ogTitle,
+      ogDescription,
+      ogImage,
+      structuredData {
+        courseLevel,
+        instructor,
+        provider,
+        reviewRating,
+        reviewCount
+      }
     },
     _createdAt,
     published
   }
 `;
 
+// Helper function to generate Sanity image URLs
+function urlForImage(source) {
+  if (!source?.asset?._ref) return null;
+  
+  const ref = source.asset._ref;
+  const [, id, dimensions, format] = ref.split('-');
+  
+  return `https://cdn.sanity.io/images/3hir6j0e/production/${id}-${dimensions}.${format}`;
+}
+
+// Process courses to include image URLs
+function processCoursesData(courses) {
+  return courses.map(course => ({
+    ...course,
+    heroImageUrl: course.heroImage ? urlForImage(course.heroImage) : null,
+    cardImageUrl: course.cardImage ? urlForImage(course.cardImage) : null,
+    bannerImageUrl: course.bannerImage ? urlForImage(course.bannerImage) : null,
+  }));
+}
+
 async function generateStaticData() {
   try {
     console.log('🔄 Fetching courses from Sanity...');
-    const courses = await client.fetch(query);
+    const rawCourses = await client.fetch(query);
     
-    console.log(`✅ Fetched ${courses.length} courses from Sanity`);
+    console.log(`✅ Fetched ${rawCourses.length} courses from Sanity`);
+    
+    // Process courses to include image URLs
+    const courses = processCoursesData(rawCourses);
 
     // Ensure data directory exists
     const dataDir = path.join(process.cwd(), 'src', 'data');

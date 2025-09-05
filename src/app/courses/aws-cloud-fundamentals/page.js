@@ -1,8 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import Head from 'next/head';
 import EnrollmentModal from '@/components/EnrollmentModal';
+import SEOHead from '@/components/SEOHead';
+import CourseStructuredData from '@/components/CourseStructuredData';
 import { getCourseBySlug } from '@/lib/staticCourseData';
 
 export default function AWSCloudFundamentals() {
@@ -54,11 +55,8 @@ export default function AWSCloudFundamentals() {
 
   return (
     <>
-      <Head>
-        <title>{courseData.seo?.metaTitle || courseData.title}</title>
-        <meta name="description" content={courseData.seo?.metaDescription || courseData.description} />
-        <meta name="keywords" content={courseData.seo?.keywords?.join(', ') || ''} />
-      </Head>
+      <SEOHead course={courseData} isHomepage={false} />
+      <CourseStructuredData course={courseData} />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
         {/* Navigation */}
@@ -83,30 +81,71 @@ export default function AWSCloudFundamentals() {
         </nav>
 
         {/* Hero Section */}
-        <section className="px-6 py-12 sm:px-8 lg:px-12">
-          <div className="mx-auto max-w-4xl text-center">
-            <div className="mb-6 inline-flex items-center rounded-full bg-purple-500/10 px-4 py-2 text-purple-400 ring-1 ring-purple-500/20">
-              <span className="text-sm font-medium">{courseData.level?.charAt(0).toUpperCase() + courseData.level?.slice(1)} Level</span>
+        <section className="px-6 py-12 sm:px-8 lg:px-12" itemScope itemType="https://schema.org/Course">
+          <div className="mx-auto max-w-7xl">
+            <div className="text-center">
+              <div className="mb-6 inline-flex items-center rounded-full bg-purple-500/10 px-4 py-2 text-purple-400 ring-1 ring-purple-500/20">
+                <span className="text-sm font-medium">{courseData.level?.charAt(0).toUpperCase() + courseData.level?.slice(1)} Level</span>
+              </div>
+              <h1 className="text-4xl font-bold text-white sm:text-6xl mb-6" itemProp="name">
+                {courseData.title?.split(' ').slice(0, -1).join(' ')} <span className="text-purple-400">{courseData.title?.split(' ').slice(-1)}</span>
+              </h1>
+              <p className="text-xl text-gray-300 leading-relaxed mb-8" itemProp="description">
+                {courseData.subtitle || courseData.description}
+              </p>
             </div>
-            <h1 className="text-4xl font-bold text-white sm:text-6xl mb-6">
-              {courseData.title?.split(' ').slice(0, -1).join(' ')} <span className="text-purple-400">{courseData.title?.split(' ').slice(-1)}</span>
-            </h1>
-            <p className="text-xl text-gray-300 leading-relaxed">
-              {courseData.subtitle || courseData.description}
-            </p>
-            <div className="flex items-center justify-center gap-6 mt-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">{courseData.duration}</div>
-                <div className="text-sm text-gray-400">Duration</div>
+
+            {/* Hero Image */}
+            {courseData.heroImageUrl && (
+              <div className="mb-8 relative aspect-[1200/630] rounded-2xl overflow-hidden mx-auto max-w-4xl">
+                <img 
+                  src={courseData.heroImageUrl} 
+                  alt={`${courseData.title} Course Hero`}
+                  className="w-full h-full object-contain"
+                  width="1200"
+                  height="630"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-slate-900/20 to-transparent"></div>
+                <div className="absolute bottom-4 left-4 right-4">
+                  <div className="inline-flex items-center rounded-full bg-purple-500/20 backdrop-blur-sm px-3 py-1.5 text-purple-300 ring-1 ring-purple-500/30">
+                    <span className="text-sm font-medium">{courseData.level?.charAt(0).toUpperCase() + courseData.level?.slice(1)} Level Course</span>
+                  </div>
+                </div>
               </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-white">{courseData.level?.charAt(0).toUpperCase() + courseData.level?.slice(1)}</div>
-                <div className="text-sm text-gray-400">Level</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-400">${courseData.price}</div>
-                {courseData.originalPrice && (
-                  <div className="text-sm text-gray-400 line-through">${courseData.originalPrice}</div>
+            )}
+            
+            <div className="text-center">
+              {/* Hidden schema.org metadata */}
+              <meta itemProp="provider" content="VR IT Academy" />
+              <meta itemProp="educationalLevel" content={courseData.level} />
+              <meta itemProp="timeRequired" content={courseData.duration} />
+              <meta itemProp="courseMode" content="blended" />
+              {courseData.seo?.keywords && (
+                <meta itemProp="keywords" content={courseData.seo.keywords.join(', ')} />
+              )}
+              {courseData.cardImageUrl && (
+                <meta itemProp="image" content={courseData.cardImageUrl} />
+              )}
+              <div className="flex items-center justify-center gap-6 mt-8">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">{courseData.duration}</div>
+                  <div className="text-sm text-gray-400">Duration</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-white">{courseData.level?.charAt(0).toUpperCase() + courseData.level?.slice(1)}</div>
+                  <div className="text-sm text-gray-400">Level</div>
+                </div>
+                {courseData.price && courseData.price > 0 && (
+                  <div className="text-center">
+                    <div className="text-2xl font-bold text-purple-400" itemProp="offers" itemScope itemType="https://schema.org/Offer">
+                      <span itemProp="price">${courseData.price}</span>
+                      <meta itemProp="priceCurrency" content="USD" />
+                      <meta itemProp="availability" content="https://schema.org/InStock" />
+                    </div>
+                    {courseData.originalPrice && (
+                      <div className="text-sm text-gray-400 line-through">${courseData.originalPrice}</div>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
@@ -235,7 +274,7 @@ export default function AWSCloudFundamentals() {
               >
                 Enroll in AWS Cloud Fundamentals
               </button>
-              {courseData.price && courseData.originalPrice && (
+              {courseData.price && courseData.originalPrice && courseData.price > 0 && (
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
                   <span className="line-through">${courseData.originalPrice}</span>
                   <span className="text-purple-400 font-semibold">${courseData.price}</span>

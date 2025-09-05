@@ -6,6 +6,8 @@ import EnrollmentModal from '../components/EnrollmentModal';
 import CoursesModal from '../components/CoursesModal';
 import BrochureModal from '../components/BrochureModal';
 import LocalBusinessSchema from '../components/LocalBusinessSchema';
+import SEOHead from '../components/SEOHead';
+import CourseStructuredData from '../components/CourseStructuredData';
 import { getAllCourses } from '@/lib/staticCourseData';
 
 export default function Home() {
@@ -128,6 +130,7 @@ export default function Home() {
 
   return (
     <>
+      <SEOHead isHomepage={true} course={courses[0]} />
       <LocalBusinessSchema />
       
       {/* Floating Mobile Phone Button - All Devices */}
@@ -255,37 +258,63 @@ export default function Home() {
                 {courses.slice(0, 3).map((course, index) => {
                   const style = getCourseStyle(course.slug?.current);
                   return (
-                    <div key={course._id} className="group relative transform hover:scale-105 transition-all duration-300">
+                    <div key={course._id} className="group relative transform hover:scale-105 transition-all duration-300 h-full">
                       <div className={`absolute inset-0 bg-gradient-to-r ${style.gradient} rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300 animate-pulse`}></div>
-                      <div className={`relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 ${style.border} rounded-2xl p-6 transition-all duration-300 hover:shadow-xl ${style.shadow}`}>
-                        <div className="text-center">
-                          <div className={`w-16 h-16 bg-gradient-to-r ${style.iconBg} rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl ${style.iconShadow}`}>
-                            <span className="text-2xl">{style.icon}</span>
+                      <div className={`relative bg-gradient-to-br from-slate-800/95 to-slate-900/95 backdrop-blur-lg border-2 ${style.border} rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-xl ${style.shadow} h-full flex flex-col min-h-[400px]`}>
+                        {/* Course Image */}
+                        {course.cardImageUrl && (
+                          <div className="relative h-40 w-full overflow-hidden">
+                            <img 
+                              src={course.cardImageUrl}
+                              alt={course.title}
+                              className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                            {/* Badge overlay on image */}
+                            <div className={`absolute top-2 right-2 ${style.badgeBg} ${style.badgeText} px-3 py-1 rounded-full text-xs font-bold animate-bounce`}>
+                              {style.badge}
+                            </div>
                           </div>
-                          <div className={`${style.badgeBg} ${style.badgeText} px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce`}>
-                            {style.badge}
+                        )}
+                        
+                        <div className="p-6 flex-1 flex flex-col">
+                          <div className="text-center flex-1 flex flex-col justify-between">
+                            {!course.cardImageUrl && (
+                              <>
+                                <div className={`w-16 h-16 bg-gradient-to-r ${style.iconBg} rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-xl ${style.iconShadow}`}>
+                                  <span className="text-2xl">{style.icon}</span>
+                                </div>
+                                <div className={`${style.badgeBg} ${style.badgeText} px-3 py-1 rounded-full text-xs font-bold mb-3 inline-block animate-bounce`}>
+                                  {style.badge}
+                                </div>
+                              </>
+                            )}
+                            <div className="flex-1 flex flex-col justify-center">
+                              <h3 className="text-xl font-bold text-white mb-3">{course.title}</h3>
+                              <p className="text-gray-300 mb-4 text-sm leading-relaxed flex-1">
+                                {course.subtitle || course.description}
+                              </p>
+                            </div>
+                            <div className="mt-auto">
+                              <div className="flex justify-center items-center space-x-2 mb-4">
+                                <span className={`${style.chipBg} ${style.chipText} px-2 py-1 rounded-full text-xs font-semibold`}>
+                                  {course.duration}
+                                </span>
+                                <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">
+                                  ${course.price}
+                                  {course.originalPrice && course.originalPrice > course.price && (
+                                    <span className="line-through ml-1">${course.originalPrice}</span>
+                                  )}
+                                </span>
+                              </div>
+                              <button
+                                onClick={() => handleLearnMore(course.title, course.slug?.current)}
+                                className={`w-full bg-gradient-to-r ${style.buttonGrad} text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg ${style.buttonShadow} transform hover:scale-105`}
+                              >
+                                {index === 0 ? '🎯 Start Journey' : index === 1 ? '🔧 Master DevOps' : '📈 Engineer Data'} →
+                              </button>
+                            </div>
                           </div>
-                          <h3 className="text-xl font-bold text-white mb-3">{course.title}</h3>
-                          <p className="text-gray-300 mb-4 text-sm leading-relaxed">
-                            {course.subtitle || course.description}
-                          </p>
-                          <div className="flex justify-center items-center space-x-2 mb-4">
-                            <span className={`${style.chipBg} ${style.chipText} px-2 py-1 rounded-full text-xs font-semibold`}>
-                              {course.duration}
-                            </span>
-                            <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">
-                              ${course.price}
-                              {course.originalPrice && course.originalPrice > course.price && (
-                                <span className="line-through ml-1">${course.originalPrice}</span>
-                              )}
-                            </span>
-                          </div>
-                          <button
-                            onClick={() => handleLearnMore(course.title, course.slug?.current)}
-                            className={`w-full bg-gradient-to-r ${style.buttonGrad} text-white py-3 rounded-lg font-bold transition-all duration-300 shadow-lg ${style.buttonShadow} transform hover:scale-105`}
-                          >
-                            {index === 0 ? '🎯 Start Journey' : index === 1 ? '🔧 Master DevOps' : '📈 Engineer Data'} →
-                          </button>
                         </div>
                       </div>
                     </div>
@@ -436,6 +465,11 @@ export default function Home() {
 
       {/* Courses Section */}
       <section className="px-6 py-20 sm:px-8 lg:px-12" itemScope itemType="https://schema.org/CourseInstance">
+        {/* Add structured data for all courses */}
+        {courses.slice(0, 3).map(course => (
+          <CourseStructuredData key={`seo-${course._id}`} course={course} />
+        ))}
+        
         <div className="mx-auto max-w-7xl">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white sm:text-5xl" itemProp="name">
@@ -446,255 +480,197 @@ export default function Home() {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-            {/* AWS Cloud Course */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-blue-500/20 to-blue-600/20 p-8 backdrop-blur-sm border border-blue-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
-              {/* Banner Image */}
-              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex items-center space-x-4 text-white">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-3xl">☁️</span>
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-bold">AWS Cloud</h4>
-                      <p className="text-blue-100 text-sm">Foundation to Advanced</p>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2">
-                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs text-white font-semibold">6 MONTHS</span>
-                  </div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
-                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
-              </div>
-
-              {/* Course Image */}
-              <div className="mb-6 h-96 rounded-xl overflow-hidden">
-                <img 
-                  src="/cloud.webp" 
-                  alt="AWS Cloud Fundamentals Course" 
-                  className="w-full h-full object-cover"
-                  width="700"
-                  height="700"
-                />
-              </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3 place-items-center">
+            {courses.slice(0, 3).map((course, index) => {
+              const style = getCourseStyle(course.slug?.current);
               
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-white">AWS Cloud Fundamentals</h3>
-                <div className="bg-blue-500/20 px-3 py-1 rounded-full">
-                  <span className="text-xs text-blue-300 font-semibold">POPULAR</span>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-300">
-                Build enterprise-grade cloud solutions. Master the foundation that powers Hyderabad&apos;s digital economy.
-              </p>
-              <ul className="mt-6 space-y-3 text-gray-300 flex-grow">
-                <li className="flex items-center">
-                  <span className="mr-3 text-blue-400">✓</span>
-                  EC2, S3, VPC, IAM & 50+ Services
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-blue-400">✓</span>
-                  Serverless Architecture & Lambda
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-blue-400">✓</span>
-                  AWS Solutions Architect Certification
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-blue-400">✓</span>
-                  Multi-Cloud Strategy & Migration
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-blue-400">✓</span>
-                  Real Banking & Fintech Projects
-                </li>
-              </ul>
-              <div className="mt-6 bg-blue-900/30 p-4 rounded-lg">
-                <div className="text-center text-blue-200">
-                  <div className="text-lg font-bold">15,000+ Students Trained</div>
-                  <div className="text-sm">Average Salary: ₹12-18 LPA</div>
-                </div>
-              </div>
-              <button 
-                onClick={() => handleLearnMore('AWS Cloud Fundamentals')}
-                className="mt-8 w-full rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-3 text-sm font-semibold text-white hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105"
-              >
-                Explore Full Curriculum
-              </button>
-            </div>
+              // Define course-specific content
+              const courseContent = {
+                'aws-cloud-fundamentals': {
+                  subtitle: 'Foundation to Advanced',
+                  description: 'Build enterprise-grade cloud solutions. Master the foundation that powers Hyderabad\'s digital economy.',
+                  features: [
+                    'EC2, S3, VPC, IAM & 50+ Services',
+                    'Serverless Architecture & Lambda',
+                    'AWS Solutions Architect Certification',
+                    'Multi-Cloud Strategy & Migration',
+                    'Real Banking & Fintech Projects'
+                  ],
+                  stats: { trained: '15,000+ Students Trained', salary: '₹12-18 LPA' },
+                  badgeText: 'POPULAR',
+                  buttonText: 'Explore Full Curriculum'
+                },
+                'aws-devops-engineering': {
+                  subtitle: 'CI/CD & Automation',
+                  description: 'Automate and scale like Hyderabad\'s leading tech companies. Master CI/CD, containers, and infrastructure automation.',
+                  features: [
+                    'Docker & Kubernetes Mastery',
+                    'Jenkins, GitLab CI/CD Pipelines',
+                    'Terraform Infrastructure as Code',
+                    'Monitoring with ELK & Grafana',
+                    'Microservices & Container Orchestration'
+                  ],
+                  stats: { trained: '10,000+ DevOps Engineers', salary: '₹15-25 LPA' },
+                  badgeText: 'TRENDING',
+                  buttonText: 'Master DevOps Skills'
+                },
+                'aws-data-engineering': {
+                  subtitle: 'Analytics & Big Data',
+                  description: 'Build scalable data pipelines like Hyderabad\'s data-driven companies. Master AWS data services and analytics solutions.',
+                  features: [
+                    'Redshift, Glue, Athena & Lake Formation',
+                    'Kinesis, MSK & Real-time Analytics',
+                    'SageMaker & ML Pipeline Development',
+                    'Big Data with EMR & Spark',
+                    'Healthcare & Retail Analytics Projects'
+                  ],
+                  stats: { trained: '12,000+ Data Engineers', salary: '₹20-30 LPA' },
+                  badgeText: 'GROWING',
+                  buttonText: 'Build Data Empires'
+                }
+              };
 
-            {/* AWS DevOps Course */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-cyan-500/20 to-cyan-600/20 p-8 backdrop-blur-sm border border-cyan-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
-              {/* Banner Image */}
-              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-cyan-600 via-cyan-700 to-purple-600 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex items-center space-x-4 text-white">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-3xl">⚙️</span>
+              const content = courseContent[course.slug?.current] || {
+                subtitle: course.subtitle,
+                description: course.description,
+                features: course.whatYouLearn?.slice(0, 5) || [],
+                stats: { trained: 'New Course', salary: `$${course.price}` },
+                badgeText: 'NEW',
+                buttonText: 'Learn More'
+              };
+
+              const gradientMap = {
+                'aws-cloud-fundamentals': 'from-blue-600 via-blue-700 to-blue-800',
+                'aws-devops-engineering': 'from-cyan-600 via-cyan-700 to-purple-600',
+                'aws-data-engineering': 'from-purple-600 via-purple-700 to-pink-600'
+              };
+
+              const borderColorMap = {
+                'aws-cloud-fundamentals': 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
+                'aws-devops-engineering': 'from-cyan-500/20 to-cyan-600/20 border-cyan-500/30',
+                'aws-data-engineering': 'from-purple-500/20 to-purple-600/20 border-purple-500/30'
+              };
+
+              const checkmarkColorMap = {
+                'aws-cloud-fundamentals': 'text-blue-400',
+                'aws-devops-engineering': 'text-cyan-400',
+                'aws-data-engineering': 'text-purple-400'
+              };
+
+              const statsColorMap = {
+                'aws-cloud-fundamentals': 'bg-blue-900/30 text-blue-200',
+                'aws-devops-engineering': 'bg-cyan-900/30 text-cyan-200',
+                'aws-data-engineering': 'bg-purple-900/30 text-purple-200'
+              };
+
+              const buttonColorMap = {
+                'aws-cloud-fundamentals': 'from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600',
+                'aws-devops-engineering': 'from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600',
+                'aws-data-engineering': 'from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600'
+              };
+
+              const badgeColorMap = {
+                'aws-cloud-fundamentals': 'bg-blue-500/20 text-blue-300',
+                'aws-devops-engineering': 'bg-cyan-500/20 text-cyan-300',
+                'aws-data-engineering': 'bg-purple-500/20 text-purple-300'
+              };
+
+              return (
+                <div 
+                  key={course._id} 
+                  className={`relative overflow-hidden rounded-2xl bg-gradient-to-b ${borderColorMap[course.slug?.current]} p-8 backdrop-blur-sm flex flex-col transform hover:scale-105 transition-all duration-300 max-w-md mx-auto`}
+                  itemScope 
+                  itemType="https://schema.org/Course"
+                >
+                  {/* Banner Image */}
+                  <div className={`relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r ${gradientMap[course.slug?.current]} overflow-hidden`}>
+                    <div className={`absolute inset-0 bg-gradient-to-r ${style.gradient.replace('40', '20')} to-transparent`}></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="flex items-center space-x-4 text-white">
+                        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
+                          <span className="text-3xl">{style.icon}</span>
+                        </div>
+                        <div>
+                          <h4 className="text-2xl font-bold">{course.title?.replace('AWS ', '')}</h4>
+                          <p className="text-white/80 text-sm">{content.subtitle}</p>
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <h4 className="text-2xl font-bold">DevOps Engineering</h4>
-                      <p className="text-cyan-100 text-sm">CI/CD & Automation</p>
+                    <div className="absolute top-2 right-2">
+                      <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
+                        <span className="text-xs text-white font-semibold">{course.duration?.toUpperCase()}</span>
+                      </div>
+                    </div>
+                    {/* Decorative Elements */}
+                    <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
+                    <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
+                    {index === 2 && (
+                      <>
+                        <div className="absolute right-8 top-4 w-6 h-6 bg-white/15 rounded-full"></div>
+                        <div className="absolute left-8 bottom-6 w-4 h-4 bg-white/10 rounded-full"></div>
+                      </>
+                    )}
+                    {index === 1 && (
+                      <div className="absolute right-4 bottom-2 w-8 h-8 bg-white/10 rounded-full"></div>
+                    )}
+                  </div>
+
+                  {/* Course Image - Optimized for 1200x630 aspect ratio */}
+                  <div className="mb-6 aspect-[1200/630] rounded-xl overflow-hidden shadow-2xl">
+                    <img 
+                      src={course.cardImageUrl || course.heroImageUrl || '/placeholder-course.jpg'} 
+                      alt={`${course.title} Course`} 
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      width="1200"
+                      height="630"
+                    />
+                  </div>
+                  
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-2xl font-bold text-white" itemProp="name">{course.title}</h3>
+                    <div className={`${badgeColorMap[course.slug?.current]} px-3 py-1 rounded-full`}>
+                      <span className="text-xs font-semibold">{content.badgeText}</span>
                     </div>
                   </div>
-                </div>
-                <div className="absolute top-2 right-2">
-                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs text-white font-semibold">8 MONTHS</span>
-                  </div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
-                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
-                <div className="absolute right-4 bottom-2 w-8 h-8 bg-white/10 rounded-full"></div>
-              </div>
-
-              {/* Course Image */}
-              <div className="mb-6 h-96 rounded-xl overflow-hidden">
-                <img 
-                  src="/devops.jpg" 
-                  alt="AWS DevOps Engineering Course" 
-                  className="w-full h-full object-cover"
-                  width="700"
-                  height="700"
-                />
-              </div>
-              
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-white">AWS DevOps Engineering</h3>
-                <div className="bg-cyan-500/20 px-3 py-1 rounded-full">
-                  <span className="text-xs text-cyan-300 font-semibold">TRENDING</span>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-300">
-                Automate and scale like Hyderabad&apos;s leading tech companies. Master CI/CD, containers, and infrastructure automation.
-              </p>
-              <ul className="mt-6 space-y-3 text-gray-300 flex-grow">
-                <li className="flex items-center">
-                  <span className="mr-3 text-cyan-400">✓</span>
-                  CodePipeline, CodeBuild & GitLab CI
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-cyan-400">✓</span>
-                  Terraform, CloudFormation & Ansible
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-cyan-400">✓</span>
-                  Kubernetes, Docker & ECS/EKS
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-cyan-400">✓</span>
-                  Monitoring with CloudWatch & Grafana
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-cyan-400">✓</span>
-                  E-commerce & Startup Case Studies
-                </li>
-              </ul>
-              <div className="mt-6 bg-cyan-900/30 p-4 rounded-lg">
-                <div className="text-center text-cyan-200">
-                  <div className="text-lg font-bold">8,500+ DevOps Engineers</div>
-                  <div className="text-sm">Average Salary: ₹18-25 LPA</div>
-                </div>
-              </div>
-              <button 
-                onClick={() => handleLearnMore('AWS DevOps Engineering')}
-                className="mt-8 w-full rounded-lg bg-gradient-to-r from-cyan-600 to-cyan-700 px-6 py-3 text-sm font-semibold text-white hover:from-cyan-500 hover:to-cyan-600 transition-all duration-300 transform hover:scale-105"
-              >
-                Master DevOps at Scale
-              </button>
-            </div>
-
-            {/* AWS Data Course */}
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-purple-500/20 to-purple-600/20 p-8 backdrop-blur-sm border border-purple-500/30 flex flex-col transform hover:scale-105 transition-all duration-300">
-              {/* Banner Image */}
-              <div className="relative mb-6 -mx-8 -mt-8 h-32 bg-gradient-to-r from-purple-600 via-pink-600 to-red-500 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-transparent"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="flex items-center space-x-4 text-white">
-                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center backdrop-blur-sm">
-                      <span className="text-3xl">📊</span>
-                    </div>
-                    <div>
-                      <h4 className="text-2xl font-bold">Data Engineering</h4>
-                      <p className="text-purple-100 text-sm">Big Data & Analytics</p>
+                  <p className="mt-4 text-gray-300" itemProp="description">
+                    {content.description}
+                  </p>
+                  
+                  {/* Hidden schema.org data */}
+                  <meta itemProp="provider" content="VR IT Academy" />
+                  <meta itemProp="educationalLevel" content={course.level} />
+                  <meta itemProp="timeRequired" content={course.duration} />
+                  <meta itemProp="price" content={course.price} />
+                  <meta itemProp="priceCurrency" content="USD" />
+                  {course.seo?.keywords && (
+                    <meta itemProp="keywords" content={course.seo.keywords.join(', ')} />
+                  )}
+                  {course.cardImageUrl && (
+                    <meta itemProp="image" content={course.cardImageUrl} />
+                  )}
+                  <ul className="mt-6 space-y-3 text-gray-300 flex-grow">
+                    {content.features.map((feature, idx) => (
+                      <li key={idx} className="flex items-center">
+                        <span className={`mr-3 ${checkmarkColorMap[course.slug?.current]}`}>✓</span>
+                        {feature}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className={`mt-6 ${statsColorMap[course.slug?.current]} p-4 rounded-lg`}>
+                    <div className="text-center">
+                      <div className="text-lg font-bold">{content.stats.trained}</div>
+                      <div className="text-sm">Average Salary: {content.stats.salary}</div>
                     </div>
                   </div>
+                  <button 
+                    onClick={() => handleLearnMore(course.title, course.slug?.current)}
+                    className={`mt-8 w-full rounded-lg bg-gradient-to-r ${buttonColorMap[course.slug?.current]} px-6 py-3 text-sm font-semibold text-white transition-all duration-300 transform hover:scale-105`}
+                  >
+                    {content.buttonText}
+                  </button>
                 </div>
-                <div className="absolute top-2 right-2">
-                  <div className="bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full">
-                    <span className="text-xs text-white font-semibold">7 MONTHS</span>
-                  </div>
-                </div>
-                {/* Decorative Elements */}
-                <div className="absolute -right-8 -top-8 w-24 h-24 bg-white/10 rounded-full"></div>
-                <div className="absolute -left-4 -bottom-4 w-16 h-16 bg-white/5 rounded-full"></div>
-                <div className="absolute right-8 top-4 w-6 h-6 bg-white/15 rounded-full"></div>
-                <div className="absolute left-8 bottom-6 w-4 h-4 bg-white/10 rounded-full"></div>
-              </div>
-
-              {/* Course Image */}
-              <div className="mb-6 h-96 rounded-xl overflow-hidden">
-                <img 
-                  src="/data.png" 
-                  alt="AWS Data Engineering Course" 
-                  className="w-full h-full object-cover"
-                  width="700"
-                  height="700"
-                />
-              </div>
-              
-              <div className="flex items-center justify-between mb-4">
-                <h3 className="text-2xl font-bold text-white">AWS Data Engineering</h3>
-                <div className="bg-purple-500/20 px-3 py-1 rounded-full">
-                  <span className="text-xs text-purple-300 font-semibold">GROWING</span>
-                </div>
-              </div>
-              <p className="mt-4 text-gray-300">
-                Build scalable data pipelines like Hyderabad&apos;s data-driven companies. Master AWS data services and analytics solutions.
-              </p>
-              <ul className="mt-6 space-y-3 text-gray-300 flex-grow">
-                <li className="flex items-center">
-                  <span className="mr-3 text-purple-400">✓</span>
-                  Redshift, Glue, Athena & Lake Formation
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-purple-400">✓</span>
-                  Kinesis, MSK & Real-time Analytics
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-purple-400">✓</span>
-                  SageMaker & ML Pipeline Development
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-purple-400">✓</span>
-                  Big Data with EMR & Spark
-                </li>
-                <li className="flex items-center">
-                  <span className="mr-3 text-purple-400">✓</span>
-                  Healthcare & Retail Analytics Projects
-                </li>
-              </ul>
-              <div className="mt-6 bg-purple-900/30 p-4 rounded-lg">
-                <div className="text-center text-purple-200">
-                  <div className="text-lg font-bold">12,000+ Data Engineers</div>
-                  <div className="text-sm">Average Salary: ₹20-30 LPA</div>
-                </div>
-              </div>
-              <button 
-                onClick={() => handleLearnMore('AWS Data Engineering')}
-                className="mt-8 w-full rounded-lg bg-gradient-to-r from-purple-600 to-purple-700 px-6 py-3 text-sm font-semibold text-white hover:from-purple-500 hover:to-purple-600 transition-all duration-300 transform hover:scale-105"
-              >
-                Build Data Empires
-              </button>
-            </div>
+              );
+            })}
           </div>
         </div>
       </section>
