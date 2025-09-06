@@ -52,7 +52,7 @@ export default function Home() {
   // Helper function to get course styling based on course type/slug
   const getCourseStyle = (courseSlug) => {
     switch (courseSlug) {
-      case 'aws-cloud-fundamentals':
+      case 'aws-cloud-online-training-in-hyderabad':
         return {
           gradient: 'from-blue-400/40 to-cyan-400/40',
           border: 'border-blue-400/60 hover:border-blue-300/80',
@@ -68,7 +68,7 @@ export default function Home() {
           icon: '☁️',
           badge: 'MOST POPULAR'
         };
-      case 'aws-devops-engineering':
+      case 'aws-devops-online-training-in-hyderabad':
         return {
           gradient: 'from-purple-400/40 to-pink-400/40',
           border: 'border-purple-400/60 hover:border-purple-300/80',
@@ -84,7 +84,7 @@ export default function Home() {
           icon: '⚙️',
           badge: 'HIGH DEMAND'
         };
-      case 'aws-data-engineering':
+      case 'aws-data-engineering-online-training-in-hyderabad':
         return {
           gradient: 'from-pink-400/40 to-red-400/40',
           border: 'border-pink-400/60 hover:border-pink-300/80',
@@ -486,7 +486,7 @@ export default function Home() {
               
               // Define course-specific content
               const courseContent = {
-                'aws-cloud-fundamentals': {
+                'aws-cloud-online-training-in-hyderabad': {
                   subtitle: 'Foundation to Advanced',
                   description: 'Build enterprise-grade cloud solutions. Master the foundation that powers Hyderabad\'s digital economy.',
                   features: [
@@ -500,7 +500,7 @@ export default function Home() {
                   badgeText: 'POPULAR',
                   buttonText: 'Explore Full Curriculum'
                 },
-                'aws-devops-engineering': {
+                'aws-devops-online-training-in-hyderabad': {
                   subtitle: 'CI/CD & Automation',
                   description: 'Automate and scale like Hyderabad\'s leading tech companies. Master CI/CD, containers, and infrastructure automation.',
                   features: [
@@ -514,7 +514,7 @@ export default function Home() {
                   badgeText: 'TRENDING',
                   buttonText: 'Master DevOps Skills'
                 },
-                'aws-data-engineering': {
+                'aws-data-engineering-online-training-in-hyderabad': {
                   subtitle: 'Analytics & Big Data',
                   description: 'Build scalable data pipelines like Hyderabad\'s data-driven companies. Master AWS data services and analytics solutions.',
                   features: [
@@ -540,39 +540,39 @@ export default function Home() {
               };
 
               const gradientMap = {
-                'aws-cloud-fundamentals': 'from-blue-600 via-blue-700 to-blue-800',
-                'aws-devops-engineering': 'from-cyan-600 via-cyan-700 to-purple-600',
-                'aws-data-engineering': 'from-purple-600 via-purple-700 to-pink-600'
+                'aws-cloud-online-training-in-hyderabad': 'from-blue-600 via-blue-700 to-blue-800',
+                'aws-devops-online-training-in-hyderabad': 'from-cyan-600 via-cyan-700 to-purple-600',
+                'aws-data-engineering-online-training-in-hyderabad': 'from-purple-600 via-purple-700 to-pink-600'
               };
 
               const borderColorMap = {
-                'aws-cloud-fundamentals': 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
-                'aws-devops-engineering': 'from-cyan-500/20 to-cyan-600/20 border-cyan-500/30',
-                'aws-data-engineering': 'from-purple-500/20 to-purple-600/20 border-purple-500/30'
+                'aws-cloud-online-training-in-hyderabad': 'from-blue-500/20 to-blue-600/20 border-blue-500/30',
+                'aws-devops-online-training-in-hyderabad': 'from-cyan-500/20 to-cyan-600/20 border-cyan-500/30',
+                'aws-data-engineering-online-training-in-hyderabad': 'from-purple-500/20 to-purple-600/20 border-purple-500/30'
               };
 
               const checkmarkColorMap = {
-                'aws-cloud-fundamentals': 'text-blue-400',
-                'aws-devops-engineering': 'text-cyan-400',
-                'aws-data-engineering': 'text-purple-400'
+                'aws-cloud-online-training-in-hyderabad': 'text-blue-400',
+                'aws-devops-online-training-in-hyderabad': 'text-cyan-400',
+                'aws-data-engineering-online-training-in-hyderabad': 'text-purple-400'
               };
 
               const statsColorMap = {
-                'aws-cloud-fundamentals': 'bg-blue-900/30 text-blue-200',
-                'aws-devops-engineering': 'bg-cyan-900/30 text-cyan-200',
-                'aws-data-engineering': 'bg-purple-900/30 text-purple-200'
+                'aws-cloud-online-training-in-hyderabad': 'bg-blue-900/30 text-blue-200',
+                'aws-devops-online-training-in-hyderabad': 'bg-cyan-900/30 text-cyan-200',
+                'aws-data-engineering-online-training-in-hyderabad': 'bg-purple-900/30 text-purple-200'
               };
 
               const buttonColorMap = {
-                'aws-cloud-fundamentals': 'from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600',
-                'aws-devops-engineering': 'from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600',
-                'aws-data-engineering': 'from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600'
+                'aws-cloud-online-training-in-hyderabad': 'from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600',
+                'aws-devops-online-training-in-hyderabad': 'from-cyan-600 to-cyan-700 hover:from-cyan-500 hover:to-cyan-600',
+                'aws-data-engineering-online-training-in-hyderabad': 'from-purple-600 to-purple-700 hover:from-purple-500 hover:to-purple-600'
               };
 
               const badgeColorMap = {
-                'aws-cloud-fundamentals': 'bg-blue-500/20 text-blue-300',
-                'aws-devops-engineering': 'bg-cyan-500/20 text-cyan-300',
-                'aws-data-engineering': 'bg-purple-500/20 text-purple-300'
+                'aws-cloud-online-training-in-hyderabad': 'bg-blue-500/20 text-blue-300',
+                'aws-devops-online-training-in-hyderabad': 'bg-cyan-500/20 text-cyan-300',
+                'aws-data-engineering-online-training-in-hyderabad': 'bg-purple-500/20 text-purple-300'
               };
 
               return (

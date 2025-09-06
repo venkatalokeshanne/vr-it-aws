@@ -11,7 +11,7 @@ const client = createClient({
 
 // SEO data for each course
 const courseSEOData = {
-  'aws-cloud-fundamentals': {
+  'aws-cloud-online-training-in-hyderabad': {
     seo: {
       metaTitle: 'AWS Cloud Fundamentals Training in Hyderabad | VR IT Academy',
       metaDescription: 'Master AWS Cloud Fundamentals in Hyderabad with hands-on training. Get AWS certified with guaranteed placement assistance. Join Ameerpet\'s top AWS institute.',
@@ -36,7 +36,7 @@ const courseSEOData = {
       }
     }
   },
-  'aws-devops-engineering': {
+  'aws-devops-online-training-in-hyderabad': {
     seo: {
       metaTitle: 'AWS DevOps Engineering Training in Hyderabad | Best DevOps Course',
       metaDescription: 'Learn AWS DevOps Engineering in Hyderabad with Docker, Kubernetes, CI/CD. Industry-expert training with real projects. Guaranteed placements in top companies.',
@@ -61,7 +61,7 @@ const courseSEOData = {
       }
     }
   },
-  'aws-data-engineering': {
+  'aws-data-engineering-online-training-in-hyderabad': {
     seo: {
       metaTitle: 'AWS Data Engineering Training in Hyderabad | Big Data Analytics Course',
       metaDescription: 'Master AWS Data Engineering with Redshift, Glue, Kinesis. Learn big data analytics, ML pipelines. Expert training with placement support in Hyderabad.',

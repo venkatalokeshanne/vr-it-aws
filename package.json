@@ -11,7 +11,7 @@
     "fetch-courses": "node scripts/fetch-courses.js",
     "show-courses": "node scripts/show-courses.js",
     "seed-courses": "node scripts/seed-courses.js",
-    "seed-data-engineering": "node scripts/seed-aws-data-engineering.js",
+    "seed-data-engineering": "node scripts/seed-aws-data-engineering-online-training-in-hyderabad.js",
     "seed-devops": "node scripts/seed-devops.js"
   },
   "dependencies": {

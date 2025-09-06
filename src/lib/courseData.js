@@ -3,9 +3,9 @@
 // Fallback data for development
 const fallbackCourses = [
   {
-    _id: 'aws-cloud-fundamentals',
+    _id: 'aws-cloud-online-training-in-hyderabad',
     title: 'AWS Cloud Fundamentals',
-    slug: { current: 'aws-cloud-fundamentals' },
+    slug: { current: 'aws-cloud-online-training-in-hyderabad' },
     subtitle: 'Master the essential concepts and services of Amazon Web Services',
     description: 'Start your cloud journey with comprehensive AWS fundamentals training. Learn core services, security best practices, and hands-on implementation.',
     duration: '6 weeks',
@@ -79,9 +79,9 @@ const fallbackCourses = [
     }
   },
   {
-    _id: 'aws-data-engineering',
+    _id: 'aws-data-engineering-online-training-in-hyderabad',
     title: 'AWS Data Engineering',
-    slug: { current: 'aws-data-engineering' },
+    slug: { current: 'aws-data-engineering-online-training-in-hyderabad' },
     subtitle: 'Build scalable data pipelines, analytics solutions, and machine learning workflows',
     description: 'Build scalable data pipelines, analytics solutions, and machine learning workflows using comprehensive AWS data services.',
     duration: '10 weeks',
@@ -91,9 +91,9 @@ const fallbackCourses = [
     published: true
   },
   {
-    _id: 'aws-devops-engineering',
+    _id: 'aws-devops-online-training-in-hyderabad',
     title: 'AWS DevOps Engineering',
-    slug: { current: 'aws-devops-engineering' },
+    slug: { current: 'aws-devops-online-training-in-hyderabad' },
     subtitle: 'Master CI/CD pipelines, Infrastructure as Code, and automation using AWS DevOps tools',
     description: 'Master CI/CD pipelines, Infrastructure as Code, and automation using AWS DevOps tools to accelerate software delivery.',
     duration: '10 weeks',

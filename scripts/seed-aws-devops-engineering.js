@@ -15,7 +15,7 @@ const awsDevOpsEngineering = {
   subtitle: 'Master automated deployment pipelines, infrastructure as code, and continuous delivery practices using comprehensive AWS DevOps services',
   slug: {
     _type: 'slug',
-    current: 'aws-devops-engineering'
+    current: 'aws-devops-online-training-in-hyderabad'
   },
   description: 'This comprehensive course covers the complete DevOps lifecycle on AWS. Learn to build robust CI/CD pipelines, implement infrastructure as code, and establish monitoring and security practices for scalable applications.',
   level: 'intermediate',

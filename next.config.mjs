@@ -64,16 +64,16 @@ const nextConfig = {
   async rewrites() {
     return [
       {
-        source: '/aws-cloud-fundamentals',
-        destination: '/courses/aws-cloud-fundamentals',
+        source: '/aws-cloud-online-training-in-hyderabad',
+        destination: '/courses/aws-cloud-online-training-in-hyderabad',
       },
       {
-        source: '/aws-devops-engineering', 
-        destination: '/courses/aws-devops-engineering',
+        source: '/aws-devops-online-training-in-hyderabad', 
+        destination: '/courses/aws-devops-online-training-in-hyderabad',
       },
       {
-        source: '/aws-data-engineering',
-        destination: '/courses/aws-data-engineering',
+        source: '/aws-data-engineering-online-training-in-hyderabad',
+        destination: '/courses/aws-data-engineering-online-training-in-hyderabad',
       },
     ];
   },

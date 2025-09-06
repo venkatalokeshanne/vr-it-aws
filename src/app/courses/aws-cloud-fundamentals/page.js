@@ -16,7 +16,7 @@ export default function AWSCloudFundamentals() {
   useEffect(() => {
     const loadCourseData = () => {
       try {
-        const data = getCourseBySlug('aws-cloud-fundamentals');
+        const data = getCourseBySlug('aws-cloud-online-training-in-hyderabad');
         setCourseData(data);
       } catch (error) {
         console.error('Error loading course data:', error);

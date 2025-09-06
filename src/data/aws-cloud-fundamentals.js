@@ -1,4 +1,4 @@
-// Auto-generated course data for aws-cloud-fundamentals
+// Auto-generated course data for aws-cloud-online-training-in-hyderabad
 export default {
   "_createdAt": "2025-09-05T20:36:16Z",
   "_id": "gVontOQlnz0gNs7vOcI25m",
@@ -207,7 +207,7 @@ export default {
   },
   "slug": {
     "_type": "slug",
-    "current": "aws-cloud-fundamentals"
+    "current": "aws-cloud-online-training-in-hyderabad"
   },
   "subtitle": "Master the essential concepts and services of Amazon Web Services",
   "title": "AWS Cloud Fundamentals",

@@ -13,7 +13,7 @@ const awsDevOpsData = {
   title: 'AWS DevOps Engineering',
   slug: {
     _type: 'slug',
-    current: 'aws-devops-engineering'
+    current: 'aws-devops-online-training-in-hyderabad'
   },
   subtitle: 'Master CI/CD pipelines, Infrastructure as Code, and automation using AWS DevOps tools',
   description: 'This advanced course focuses on DevOps practices and automation using AWS services. Learn to build robust CI/CD pipelines, implement Infrastructure as Code, and automate deployment processes for modern applications.',

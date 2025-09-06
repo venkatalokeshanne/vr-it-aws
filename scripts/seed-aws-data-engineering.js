@@ -13,7 +13,7 @@ const awsDataEngineeringCourse = {
   title: 'AWS Data Engineering',
   slug: {
     _type: 'slug',
-    current: 'aws-data-engineering'
+    current: 'aws-data-engineering-online-training-in-hyderabad'
   },
   subtitle: 'Build scalable data pipelines, analytics solutions, and machine learning workflows using comprehensive AWS data services',
   description: 'This comprehensive course covers the entire data engineering lifecycle on AWS. You will learn to design, build, and maintain robust data architectures that can handle massive scale and complex analytics workloads.',
@@ -201,7 +201,7 @@ async function seedAwsDataEngineering() {
       console.log('📝 Course may already exist. Updating instead...');
       try {
         // Try to update instead
-        const existingDocs = await client.fetch(`*[_type == "awsCourse" && slug.current == "aws-data-engineering"]`);
+        const existingDocs = await client.fetch(`*[_type == "awsCourse" && slug.current == "aws-data-engineering-online-training-in-hyderabad"]`);
         if (existingDocs.length > 0) {
           const updated = await client
             .patch(existingDocs[0]._id)

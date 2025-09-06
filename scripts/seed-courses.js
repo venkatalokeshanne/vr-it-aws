@@ -15,7 +15,7 @@ const awsCloudFundamentalsData = {
   title: 'AWS Cloud Fundamentals',
   slug: {
     _type: 'slug',
-    current: 'aws-cloud-fundamentals'
+    current: 'aws-cloud-online-training-in-hyderabad'
   },
   subtitle: 'Master the essential concepts and services of Amazon Web Services',
   description: 'Start your cloud journey with comprehensive AWS fundamentals training. Learn core services, security best practices, and hands-on implementation.',
@@ -149,7 +149,7 @@ const awsDataEngineeringData = {
   title: 'AWS Data Engineering',
   slug: {
     _type: 'slug',
-    current: 'aws-data-engineering'
+    current: 'aws-data-engineering-online-training-in-hyderabad'
   },
   subtitle: 'Build scalable data pipelines and analytics solutions on AWS',
   description: 'Learn to design, build, and maintain robust data architectures using comprehensive AWS data services for massive scale analytics workloads.',
@@ -288,8 +288,8 @@ async function createCourseData() {
     
     console.log('🎉 All course data has been successfully created!')
     console.log('You can now access your courses at:')
-    console.log('- AWS Cloud Fundamentals: /courses/aws-cloud-fundamentals')
-    console.log('- AWS Data Engineering: /courses/aws-data-engineering')
+    console.log('- AWS Cloud Fundamentals: /courses/aws-cloud-online-training-in-hyderabad')
+    console.log('- AWS Data Engineering: /courses/aws-data-engineering-online-training-in-hyderabad')
     
   } catch (error) {
     console.error('❌ Error creating course data:', error)

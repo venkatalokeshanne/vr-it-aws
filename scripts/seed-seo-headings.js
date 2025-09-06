@@ -18,7 +18,7 @@ async function seedSEOHeadings() {
       
       // Generate SEO headings based on course slug
       switch (course.slug.current) {
-        case 'aws-cloud-fundamentals':
+        case 'aws-cloud-online-training-in-hyderabad':
           seoHeadings = [
             {
               level: 'h1',
@@ -47,7 +47,7 @@ async function seedSEOHeadings() {
           ];
           break;
         
-        case 'aws-devops-engineering':
+        case 'aws-devops-online-training-in-hyderabad':
           seoHeadings = [
             {
               level: 'h1',
@@ -76,7 +76,7 @@ async function seedSEOHeadings() {
           ];
           break;
         
-        case 'aws-data-engineering':
+        case 'aws-data-engineering-online-training-in-hyderabad':
           seoHeadings = [
             {
               level: 'h1',

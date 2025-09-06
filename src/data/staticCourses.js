@@ -250,7 +250,7 @@ const coursesData = [
     },
     "slug": {
       "_type": "slug",
-      "current": "aws-data-engineering"
+      "current": "aws-data-engineering-online-training-in-hyderabad"
     },
     "subtitle": "Build scalable data pipelines, analytics solutions, and machine learning workflows using comprehensive AWS data services",
     "title": "AWS Data Engineering",
@@ -474,7 +474,7 @@ const coursesData = [
     },
     "slug": {
       "_type": "slug",
-      "current": "aws-cloud-fundamentals"
+      "current": "aws-cloud-online-training-in-hyderabad"
     },
     "subtitle": "Master the essential concepts and services of Amazon Web Services",
     "title": "AWS Cloud Fundamentals",
@@ -753,7 +753,7 @@ const coursesData = [
     },
     "slug": {
       "_type": "slug",
-      "current": "aws-devops-engineering"
+      "current": "aws-devops-online-training-in-hyderabad"
     },
     "subtitle": "Master automated deployment pipelines, infrastructure as code, and continuous delivery practices using comprehensive AWS DevOps services",
     "title": "AWS DevOps Engineering",

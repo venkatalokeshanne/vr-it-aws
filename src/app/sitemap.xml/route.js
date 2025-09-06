@@ -3,9 +3,9 @@ export async function GET() {
   
   const routes = [
     '',
-    '/courses/aws-cloud-fundamentals',
-    '/courses/aws-devops-engineering',
-    '/courses/aws-data-engineering',
+    '/courses/aws-cloud-online-training-in-hyderabad',
+    '/courses/aws-devops-online-training-in-hyderabad',
+    '/courses/aws-data-engineering-online-training-in-hyderabad',
   ];
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>

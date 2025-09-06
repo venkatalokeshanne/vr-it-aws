@@ -1,4 +1,4 @@
-// Auto-generated course data for aws-devops-engineering
+// Auto-generated course data for aws-devops-online-training-in-hyderabad
 export default {
   "_createdAt": "2025-09-05T21:19:54Z",
   "_id": "gVontOQlnz0gNs7vOcKZga",
@@ -261,7 +261,7 @@ export default {
   },
   "slug": {
     "_type": "slug",
-    "current": "aws-devops-engineering"
+    "current": "aws-devops-online-training-in-hyderabad"
   },
   "subtitle": "Master automated deployment pipelines, infrastructure as code, and continuous delivery practices using comprehensive AWS DevOps services",
   "title": "AWS DevOps Engineering",

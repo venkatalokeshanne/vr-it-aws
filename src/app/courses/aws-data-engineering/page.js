@@ -16,7 +16,7 @@ export default function AWSDataEngineering() {
   useEffect(() => {
     const loadCourseData = () => {
       try {
-        const data = getCourseBySlug('aws-data-engineering');
+        const data = getCourseBySlug('aws-data-engineering-online-training-in-hyderabad');
         setCourseData(data);
       } catch (error) {
         console.error('Error loading course data:', error);

@@ -11,17 +11,17 @@ const client = createClient({
 
 // Course image mappings based on course slugs - All images sized to 1,200 × 630 px
 const courseImages = {
-  'aws-cloud-fundamentals': {
+  'aws-cloud-online-training-in-hyderabad': {
     cardImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=630&fit=crop&crop=center',
     bannerImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=630&fit=crop&crop=center',
     heroImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&h=630&fit=crop&crop=center'
   },
-  'aws-devops-engineering': {
+  'aws-devops-online-training-in-hyderabad': {
     cardImage: 'https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=1200&h=630&fit=crop&crop=center',
     bannerImage: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=630&fit=crop&crop=center',
     heroImage: 'https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&h=630&fit=crop&crop=center'
   },
-  'aws-data-engineering': {
+  'aws-data-engineering-online-training-in-hyderabad': {
     cardImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=630&fit=crop&crop=center',
     bannerImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=630&fit=crop&crop=center',
     heroImage: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=1200&h=630&fit=crop&crop=center'

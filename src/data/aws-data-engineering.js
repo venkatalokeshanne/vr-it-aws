@@ -1,4 +1,4 @@
-// Auto-generated course data for aws-data-engineering
+// Auto-generated course data for aws-data-engineering-online-training-in-hyderabad
 export default {
   "_createdAt": "2025-09-05T20:43:26Z",
   "_id": "75ssDm9488HMMABZ1oGilK",
@@ -247,7 +247,7 @@ export default {
   },
   "slug": {
     "_type": "slug",
-    "current": "aws-data-engineering"
+    "current": "aws-data-engineering-online-training-in-hyderabad"
   },
   "subtitle": "Build scalable data pipelines, analytics solutions, and machine learning workflows using comprehensive AWS data services",
   "title": "AWS Data Engineering",

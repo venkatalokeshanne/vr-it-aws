@@ -16,7 +16,7 @@ export default function AWSDevOpsEngineering() {
   useEffect(() => {
     const loadCourseData = () => {
       try {
-        const data = getCourseBySlug('aws-devops-engineering');
+        const data = getCourseBySlug('aws-devops-online-training-in-hyderabad');
         setCourseData(data);
       } catch (error) {
         console.error('Error loading course data:', error);
