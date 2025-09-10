@@ -303,7 +303,7 @@ export default function Home() {
                                 <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">
                                   ₹{course.price}
                                   {course.originalPrice && course.originalPrice > course.price && (
-                                    <span className="line-through ml-1">${course.originalPrice}</span>
+                                    <span className="line-through ml-1">₹{course.originalPrice}</span>
                                   )}
                                 </span>
                               </div>
