@@ -301,7 +301,7 @@ export default function Home() {
                                   {course.duration}
                                 </span>
                                 <span className="bg-green-500/30 text-green-200 px-2 py-1 rounded-full text-xs font-semibold">
-                                  ${course.price}
+                                  ₹{course.price}
                                   {course.originalPrice && course.originalPrice > course.price && (
                                     <span className="line-through ml-1">${course.originalPrice}</span>
                                   )}
@@ -534,7 +534,7 @@ export default function Home() {
                 subtitle: course.subtitle,
                 description: course.description,
                 features: course.whatYouLearn?.slice(0, 5) || [],
-                stats: { trained: 'New Course', salary: `$${course.price}` },
+                stats: { trained: 'New Course', salary: `$₹{course.price}` },
                 badgeText: 'NEW',
                 buttonText: 'Learn More'
               };
@@ -641,7 +641,7 @@ export default function Home() {
                   <meta itemProp="educationalLevel" content={course.level} />
                   <meta itemProp="timeRequired" content={course.duration} />
                   <meta itemProp="price" content={course.price} />
-                  <meta itemProp="priceCurrency" content="USD" />
+                  <meta itemProp="priceCurrency" content="Rupee" />
                   {course.seo?.keywords && (
                     <meta itemProp="keywords" content={course.seo.keywords.join(', ')} />
                   )}

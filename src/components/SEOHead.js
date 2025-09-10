@@ -65,7 +65,7 @@ export default function SEOHead({ course, isHomepage = false }) {
       "offers": {
         "@type": "Offer",
         "price": course.price,
-        "priceCurrency": "USD",
+        "priceCurrency": "Rupee",
         "availability": "https://schema.org/InStock"
       },
       "aggregateRating": structuredData.reviewRating ? {
@@ -156,7 +156,7 @@ export default function SEOHead({ course, isHomepage = false }) {
       {!isHomepage && course && (
         <>
           <meta property="product:price:amount" content={course.price} />
-          <meta property="product:price:currency" content="USD" />
+          <meta property="product:price:currency" content="Rupee" />
           <meta name="course:level" content={course.level} />
           <meta name="course:duration" content={course.duration} />
         </>

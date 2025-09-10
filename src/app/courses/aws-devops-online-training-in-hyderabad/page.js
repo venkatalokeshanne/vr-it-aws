@@ -147,8 +147,8 @@ export default function AWSDevOpsEngineering() {
                 {courseData.price && courseData.price > 0 && (
                   <div className="text-center">
                     <div className="text-2xl font-bold text-cyan-400" itemProp="offers" itemScope itemType="https://schema.org/Offer">
-                      <span itemProp="price">${courseData.price}</span>
-                      <meta itemProp="priceCurrency" content="USD" />
+                      <span itemProp="price">₹{courseData.price}</span>
+                      <meta itemProp="priceCurrency" content="Rupee" />
                       <meta itemProp="availability" content="https://schema.org/InStock" />
                     </div>
                     {courseData.originalPrice && (
@@ -289,7 +289,7 @@ export default function AWSDevOpsEngineering() {
               {courseData.price && courseData.originalPrice && courseData.price > 0 && (
                 <div className="flex items-center justify-center gap-2 text-sm text-gray-400">
                   <span className="line-through">${courseData.originalPrice}</span>
-                  <span className="text-cyan-400 font-semibold">${courseData.price}</span>
+                  <span className="text-cyan-400 font-semibold">₹{courseData.price}</span>
                   <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded">
                     Save ${courseData.originalPrice - courseData.price}
                   </span>

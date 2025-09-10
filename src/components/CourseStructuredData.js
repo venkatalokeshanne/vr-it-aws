@@ -46,7 +46,7 @@ export default function CourseStructuredData({ course }) {
     "offers": {
       "@type": "Offer",
       "price": course.price,
-      "priceCurrency": "USD",
+      "priceCurrency": "Rupee",
       "availability": "https://schema.org/InStock",
       "url": `https://www.awsdevopstraininginhyderabad.com/courses/${course.slug?.current}`,
       "validFrom": new Date().toISOString(),
