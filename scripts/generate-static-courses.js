@@ -137,7 +137,18 @@ export default ${JSON.stringify(course, null, 2)};
     
   } catch (error) {
     console.error('❌ Error generating static data:', error.message);
-    process.exit(1);
+    
+    // Check if static data already exists
+    const dataDir = path.join(process.cwd(), 'src', 'data');
+    const jsFilePath = path.join(dataDir, 'staticCourses.js');
+    
+    if (fs.existsSync(jsFilePath)) {
+      console.log('ℹ️  Using existing static course data');
+      process.exit(0);
+    } else {
+      console.error('❌ No existing static data found. Cannot proceed.');
+      process.exit(1);
+    }
   }
 }
 
