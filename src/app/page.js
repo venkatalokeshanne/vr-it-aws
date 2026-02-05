@@ -1101,42 +1101,8 @@ Looking forward to hearing from you!`;
               </div>
               
               <div className="relative rounded-2xl overflow-hidden border border-slate-600/50">
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.6!2d78.4483!3d17.4399!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDI2JzIzLjYiTiA3OMKwMjYnNTMuOSJF!5e0!3m2!1sen!2sin!4v1643724000000!5m2!1sen!2sin"
-                  width="100%"
-                  height="400"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="AWS DevOps Training Hyderabad Location"
-                  className="w-full h-96 rounded-xl"
-                ></iframe>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4919340384176!2d78.4447854!3d17.4361534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919a92a31daf%3A0x934cc6531fd1e587!2sAWS%20Devops%20Training%20In%20Hyderabad!5e0!3m2!1sen!2sfr!4v1770299024828!5m2!1sen!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 
-                {/* Map overlay with address details */}
-                <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-lg max-w-sm">
-                  <div className="flex items-start gap-3">
-                    <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                      </svg>
-                    </div>
-                    <div>
-                      <h5 className="font-bold text-gray-900 text-sm">AWS DevOps Training in Hyderabad</h5>
-                      <p className="text-xs text-gray-600 mt-1">
-                        Aditya enclave, nilgiri block<br/>
-                        near vamsi Installation, 506A/1<br/>
-                        basti road, beside metro line<br/>
-                        Hyderabad, Telangana 500018
-                      </p>
-                      <div className="flex items-center gap-2 mt-2">
-                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">Open</span>
-                        <span className="text-xs text-gray-500">9 AM - 9 PM</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               {/* Quick directions and transportation */}
               <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
