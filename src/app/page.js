@@ -1100,8 +1100,8 @@ Looking forward to hearing from you!`;
                 <p className="text-gray-400 mb-6">Located in Ameerpet near Satyam Theatre, easily accessible by metro and road</p>
               </div>
               
-              <div className="relative rounded-2xl overflow-hidden border border-slate-600/50">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4919340384176!2d78.4447854!3d17.4361534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919a92a31daf%3A0x934cc6531fd1e587!2sAWS%20Devops%20Training%20In%20Hyderabad!5e0!3m2!1sen!2sfr!4v1770299024828!5m2!1sen!2sfr" width="600" height="450" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
+              <div className="relative rounded-2xl overflow-hidden border border-slate-600/50 w-full h-96">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.4919340384176!2d78.4447854!3d17.4361534!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb919a92a31daf%3A0x934cc6531fd1e587!2sAWS%20Devops%20Training%20In%20Hyderabad!5e0!3m2!1sen!2sfr!4v1770299024828!5m2!1sen!2sfr" className="w-full h-full" style={{border: 0}} allowFullScreen="" loading="lazy" referrerPolicy="no-referrer-when-downgrade"></iframe>
               </div>
                 
 
