@@ -53,7 +53,9 @@ We follow conventional commit message format to maintain a clear and meaningful 
    - `docs: update installation instructions`
    - `refactor: simplify data fetching logic`
 
-For detailed guidelines, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+📖 **Resources:**
+- [Quick Reference Guide](./COMMIT_MESSAGE_GUIDE.md) - Fast lookup for commit types and examples
+- [Contributing Guidelines](./CONTRIBUTING.md) - Detailed contribution guidelines
 
 ### Commit Message Validation
 
