@@ -36,7 +36,7 @@ Must be one of the following:
 The subject contains a succinct description of the change:
 
 - Use the imperative, present tense: "change" not "changed" nor "changes"
-- Don't capitalize the first letter
+- Use lowercase after the colon (e.g., "feat: add feature" not "feat: Add feature")
 - No period (.) at the end
 - Maximum 50 characters
 
